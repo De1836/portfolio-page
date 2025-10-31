@@ -1,6 +1,7 @@
 :root {
     --scroll-distance: calc(var(--scroll-y, 0px) * -1px);
-    --switching-speed: 0.5s;
+    --switch-interval: 3s; /* time each word is active */
+    --items: 5; /* number of scrolling items */
 }
 
 html {
@@ -9,71 +10,11 @@ html {
     color: #ffffff;
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    background-color: rgba(12, 14, 16, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 10px 40px;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
-    .logo {
-        display: flex;
-        align-items: center;
-    }
-    
-    #logo {
-        height: 50px;
-        width: auto;
-    }
-    
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 30px;
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    li {
-        margin-left: 10px;
-    }
-
-    li a {
-        color: #ffffff;
-        text-decoration: none;
-        padding: 8px 0;
-        position: relative;
-        transition: color 0.3s ease;
-    }
-
-    li a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #ffffff;
-        transition: width 0.3s ease;
-    }
-
-    li a:hover {
-        color: #ffffff;
-    }
-
-    li a:hover::after {
-        width: 100%;
-    }
+.main {
+    display: block; 
 }
 
-.main {
+.profile-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -158,6 +99,22 @@ nav {
     align-items: center;
 }
 
+/* Works section under hero */
+.work-imgs {
+    padding: 0 10%;
+    max-width: 1400px;
+    margin: 0 auto 16px auto;
+}
+
+@media (max-width: 900px) {
+    .profile-row {
+        flex-direction: column;
+        gap: 32px;
+        min-height: auto;
+        padding: 0 6%;
+    }
+}
+
 .profile-pic {
     width: 350px;
     height: 350px;
@@ -171,4 +128,163 @@ nav {
 .profile-pic:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.scrolling-txt-div {
+    position: relative;
+    height: 2.5rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.scrolling-text {
+    position: absolute;
+    opacity: 0;
+    font-size: 2rem;
+    color: #888;
+    animation-name: switch-text;
+    animation-duration: calc(var(--switch-interval) * var(--items));
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-fill-mode: both; /* apply 0% before start and 100% after end */
+    white-space: nowrap;
+    left: 0;
+    width: 100%;
+    line-height: 2.5rem;
+}
+
+/* 
+learned css animation from ai
+but of all the things
+i had to hard code the switching
+*/
+
+.scrolling-text:nth-child(1) {
+    animation-delay: calc(var(--switch-interval) * 0);
+}
+
+.scrolling-text:nth-child(2) {
+    animation-delay: calc(var(--switch-interval) * 1);
+}
+
+.scrolling-text:nth-child(3) {
+    animation-delay: calc(var(--switch-interval) * 2);
+}
+
+.scrolling-text:nth-child(4) {
+    animation-delay: calc(var(--switch-interval) * 3);
+}
+
+.scrolling-text:nth-child(5) {
+    animation-delay: calc(var(--switch-interval) * 4);
+}
+
+
+/* 
+friend reccomended i add the opacity
+they were not wrong
+it looks amazing chat
+*/
+
+@keyframes switch-text {
+    0% { opacity: 0; transform: translateY(100%); }
+    4% { opacity: 1; transform: translateY(0); }
+    20% { opacity: 1; transform: translateY(0); }
+    24% { opacity: 0; transform: translateY(-100%); }
+    100% { opacity: 0; transform: translateY(-100%); }
+}
+
+.i-am {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+}
+
+/* kinda like liquid */
+.glass-nav {
+    position: sticky;
+    top: 16px;
+    margin: 0 auto 24px auto;
+    width: min(1100px, calc(100% - 48px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-radius: 9999px;
+    background: rgba(20, 20, 22, 0.6);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+    z-index: 1000;
+}
+
+.glass-nav .brand {
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: #cfd3d6;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.glass-nav .nav-links{
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0 6px 0 0;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0 6px 0 0;
+}
+
+img.social-img-link{
+    width: 20px;
+    height: 20px;
+}
+
+.glass-nav .nav-links a {
+    color: #aeb4b9;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 9999px;
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-nav .nav-links a:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.06);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+@media (max-width: 640px) {
+    .glass-nav {
+        width: calc(100% - 32px);
+        padding: 10px 14px;
+    }
+    .glass-nav .nav-links {
+        gap: 16px;
+    }
+    .glass-nav .brand {
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+    }
 }
