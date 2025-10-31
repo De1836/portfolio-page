@@ -1,7 +1,7 @@
 :root {
     --scroll-distance: calc(var(--scroll-y, 0px) * -1px);
     --switch-interval: 3s; /* time each word is active */
-    --items: 5; /* number of scrolling items */
+    --items: 6; /* number of scrolling items */
 }
 
 html {
@@ -173,12 +173,14 @@ h2 {
     animation-name: switch-text;
     animation-duration: calc(var(--switch-interval) * var(--items));
     animation-iteration-count: infinite;
-    animation-timing-function: ease;
+    animation-timing-function: linear;
     animation-fill-mode: both; /* apply 0% before start and 100% after end */
     white-space: nowrap;
     left: 0;
+    top: 0;
     width: 100%;
     line-height: 2.5rem;
+    will-change: opacity, transform;
 }
 
 /* 
@@ -207,6 +209,10 @@ i had to hard code the switching
     animation-delay: calc(var(--switch-interval) * 4);
 }
 
+.scrolling-text:nth-child(6) {
+    animation-delay: calc(var(--switch-interval) * 5);
+}
+
 
 /* 
 friend reccomended i add the opacity
@@ -215,11 +221,11 @@ it looks amazing chat
 */
 
 @keyframes switch-text {
-    0% { opacity: 0; transform: translateY(100%); }
-    4% { opacity: 1; transform: translateY(0); }
-    20% { opacity: 1; transform: translateY(0); }
-    24% { opacity: 0; transform: translateY(-100%); }
-    100% { opacity: 0; transform: translateY(-100%); }
+  0%   { opacity: 0; transform: translateY(100%); }
+  3%   { opacity: 1; transform: translateY(0); }
+  17%  { opacity: 1; transform: translateY(0); }
+  20%  { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 0; transform: translateY(-100%); }
 }
 
 .i-am {
@@ -338,7 +344,8 @@ img.work-media {
 .about-main {
     max-width: 900px;
     padding: 0 10%;
-    margin: 72px auto 40px auto;
+    margin: 70px auto 40px auto;
+    justify-content: center;
 }
 
 .about-main h1 {
@@ -410,5 +417,5 @@ img.work-media {
 }
 
 .work-imgs-content {
-    margin-left: -150px;
+    margin-left: 0px;
 }
