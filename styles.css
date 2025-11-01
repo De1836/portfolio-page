@@ -25,7 +25,11 @@ body { padding-top: 80px; }
     min-height: 90vh;
     padding: 0 10%;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 16px auto;
+}
+
+.profile-content {
+    animation: fade-down-text 1s ease-in-out;
 }
 
 .main-content {
@@ -141,11 +145,21 @@ body { padding-top: 80px; }
     border: 5px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    animation: profile-right 1s ease-in-out;
 }
 
 .profile-pic:hover {
     transform: scale(1.1);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes profile-right {
+    0% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 h1 {
@@ -184,6 +198,17 @@ h2 {
     will-change: opacity, transform;
 }
 
+@keyframes fade-down-text {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* 
 learned css animation from ai
 but of all the things
@@ -191,27 +216,27 @@ i had to hard code the switching
 */
 
 .scrolling-text:nth-child(1) {
-    animation-delay: calc(var(--switch-interval) * 0);
+    animation-delay: calc(var(--switch-interval) * 0 + 0.5s);
 }
 
 .scrolling-text:nth-child(2) {
-    animation-delay: calc(var(--switch-interval) * 1);
+    animation-delay: calc(var(--switch-interval) * 1 + 0.5s);
 }
 
 .scrolling-text:nth-child(3) {
-    animation-delay: calc(var(--switch-interval) * 2);
+    animation-delay: calc(var(--switch-interval) * 2 + 0.5s);
 }
 
 .scrolling-text:nth-child(4) {
-    animation-delay: calc(var(--switch-interval) * 3);
+    animation-delay: calc(var(--switch-interval) * 3 + 0.5s);
 }
 
 .scrolling-text:nth-child(5) {
-    animation-delay: calc(var(--switch-interval) * 4);
+    animation-delay: calc(var(--switch-interval) * 4 + 0.5s);
 }
 
 .scrolling-text:nth-child(6) {
-    animation-delay: calc(var(--switch-interval) * 5);
+    animation-delay: calc(var(--switch-interval) * 5 + 0.5s);
 }
 
 
@@ -254,6 +279,7 @@ it looks amazing chat
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
     z-index: 1000;
+    animation: fade-down 1s ease-in-out;
 }
 
 .glass-nav .brand {
@@ -308,6 +334,17 @@ background: rgba(255,255,255,0.06);
 box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }
 
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 @media (max-width: 640px) {
     .glass-nav {
     width: calc(100% - 32px);
@@ -342,19 +379,68 @@ img.work-media {
     display: block;
 }
 
+.hello {
+  min-height: calc(100vh - 80px); /* accounts for fixed navbar padding-top */
+  display: flex;
+  align-items: flex-end;
+  padding: 0 10% 6vh 10%;
+  animation: fade-up 1s ease-in-out;
+}
+
+.hello-inner { width: 100%; }
+
+.hello-there {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #cfd3d6;
+  font-style: italic;
+  margin: 0 0 12px 0;
+}
+
+.hello-world {
+    cursor: pointer;
+}
+
+.hello-name {
+  font-size: clamp(7em,21vw, 20rem);
+  line-height: 0.95;
+  font-weight: 700;
+  margin: 0 0 6vh 0;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .about-main {
-    max-width: 900px;
-    padding: 0 10%;
-    margin: 70px auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: center;
+    align-items: center;
+}
+
+.about-main span {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #b7bec5;
+    max-width: 70ch;
 }
 
 .about-main h1 {
     margin-bottom: 16px;
+    font-size: 50px;
+    margin-top: -50px;
 }
 
 .about-main p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     line-height: 1.8;
     color: #b7bec5;
     max-width: 70ch;
