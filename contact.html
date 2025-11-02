@@ -23,5 +23,44 @@
             </ul>
         </nav>
     </header>
+    <section class="contact-section">
+    <div class="contact-container glass-form">
+        <h2>Get in Touch</h2>
+        <p class="contact-subtitle">dont be shy, i'm very approachable <br>have a project in mind or just want to say hi? send me an email :)</p>
+        
+        <form class="contact-form" action="https://formspree.io/f/your-form-endpoint" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
+                <label for="name" class="form-label">Your Name</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
+                <label for="email" class="form-label">Email Address</label>
+            </div>
+            
+            <div class="form-group">
+                <select id="subject" name="subject" class="form-input" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="work">Work Inquiry</option>
+                    <option value="collaboration">Collaboration</option>
+                    <option value="question">Question</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="subject" class="form-label">Subject</label>
+            </div>
+            
+            <div class="form-group">
+                <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
+                <label for="message" class="form-label">Your Message</label>
+            </div>
+            <div class="send-buttons">
+                <button type="submit" class="submit-btn">Send Message</button> 
+                <a class="direct-email" href="mailto:1836.cy@proton.me">Email me directly</a>
+            </div>
+            
+        </form>
+    </div>
+</section>
 </body>
 </html>

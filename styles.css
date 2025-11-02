@@ -13,6 +13,53 @@ html {
 /* Reserve space for fixed navbar */
 body { padding-top: 80px; }
 
+footer {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+}
+
+.footer-content-middle, .footer-content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+}
+
+.footer-content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-nav a {
+    color: #c8cfd4;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 8px 12px;
+    border-radius: 9999px;
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
 .main {
     display: block; 
     justify-content: center;
@@ -148,7 +195,7 @@ body { padding-top: 80px; }
     animation: profile-right 1s ease-in-out;
 }
 
-.profile-pic:hover {
+.profile-pic:hover {    
     transform: scale(1.1);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
@@ -282,22 +329,19 @@ it looks amazing chat
     animation: fade-down 1s ease-in-out;
 }
 
-.glass-nav .brand {
+.brand {
     font-size: 0.9rem;
     letter-spacing: 0.18em;
     color: #cfd3d6;
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
+    margin-left: 15px;
 }
 
 .nav-active {
     color: #8a8a8a;
     text-decoration: underline;
-}
-
-.brand {
-    margin-left: 15px;
 }
 
 .glass-nav .nav-links{
@@ -505,4 +549,159 @@ img.work-media {
 
 .work-imgs-content {
     margin-left: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+    padding: 80px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.glass-form {
+    background: rgba(20, 20, 22, 0.6);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.contact-subtitle {
+    color: #aeb4b9;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-label {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: #aeb4b9;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: rgba(20, 20, 22, 0.6);
+    padding: 0 4px;
+    transform-origin: left top;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    transform: translateY(-24px) scale(0.9);
+    color: #fff;
+    background: rgba(20, 20, 22, 0.8);
+}
+
+select.form-input {
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px auto;
+    padding-right: 40px;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .glass-form {
+        padding: 30px 20px;
+    }
+    
+    .contact-section {
+        padding: 40px 5%;
+    }
+}
+
+.send-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.direct-email {
+    background: #c4c4c4;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.direct-email:hover {
+    background: #757575;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.3);
+}
+
+.say-hi {
+
+}
+
+@keyframes hi {
+    
 }
