@@ -8,6 +8,10 @@ html {
     background-color: #0c0e10;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #ffffff;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /* Reserve space for fixed navbar */
@@ -15,49 +19,120 @@ body { padding-top: 80px; }
 
 footer {
     padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0c0e10;
+    padding: 60px 5% 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    gap: 5vh;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-.footer-content-middle, .footer-content-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-direction: row-reverse;
+.footer-left {
+    flex: 1;
+    min-width: 250px;
 }
 
-.footer-content-left {
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+}
+
+.footer-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.footer-links {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .footer-nav {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
 }
 
 .footer-nav a {
-    color: #c8cfd4;
+    color: #aeb4b9;
     text-decoration: none;
-    font-size: 2rem;
-    padding: 8px 12px;
-    border-radius: 9999px;
-    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
 }
 
 .footer-nav a:hover {
-    color: #ffffff;
+    color: #fff;
+}
+
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) { /* added all of these ones because it didnt work on phone lol */
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-column {
+        width: 100%;
+    }
 }
 
 .main {
@@ -159,6 +234,7 @@ footer {
     padding: 0 10%;
     max-width: 1400px;
     margin: 0 auto 16px auto;
+    width: 100%;
 }
 
 /* Works cards side-by-side */
@@ -169,10 +245,25 @@ footer {
     align-items: flex-start;
 }
 
+.work-media { border-radius: 10px; }
+
 .work-imgs-content .work-img {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.work-img {
+    transition: transform 0.3s ease;
+    padding: 16px;
+    background-color: #4d4d4d7a;
+    border-radius: 20px;
+}
+
+.work-img:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(107, 107, 107, 0.25);
 }
 
 @media (max-width: 900px) {
@@ -481,6 +572,14 @@ img.work-media {
     margin-bottom: 16px;
     font-size: 50px;
     margin-top: -50px;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.about-main h1.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .about-main p {
@@ -551,24 +650,15 @@ img.work-media {
     margin-left: 0px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .contact-section {
     padding: 80px 10%;
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.glass-form {
+.contact-container {
     background: rgba(20, 20, 22, 0.6);
     backdrop-filter: blur(12px) saturate(120%);
     -webkit-backdrop-filter: blur(12px) saturate(120%);
@@ -578,6 +668,30 @@ img.work-media {
     max-width: 700px;
     margin: 0 auto;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: fade-left 1s ease-in-out;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+@keyframes fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .contact-container h2 {
@@ -634,16 +748,7 @@ img.work-media {
     background: rgba(20, 20, 22, 0.8);
 }
 
-select.form-input {
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 12px auto;
-    padding-right: 40px;
-}
-
-.submit-btn {
-    background: #007bff;
+.submit-btn, .direct-email {
     color: white;
     border: none;
     padding: 14px 32px;
@@ -654,6 +759,20 @@ select.form-input {
     transition: all 0.3s ease;
     margin-top: 1rem;
     width: 100%;
+}
+
+.submit-btn {
+    background: #007bff;
+}
+
+.direct-email {
+    background: #575757;
+}
+
+.direct-email:hover {
+    background: #757575;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.3);
 }
 
 .submit-btn:hover {
@@ -664,44 +783,33 @@ select.form-input {
 
 /* For mobile responsiveness */
 @media (max-width: 768px) {
-    .glass-form {
+    .contact-container {
         padding: 30px 20px;
     }
     
     .contact-section {
         padding: 40px 5%;
     }
+    
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1rem;
+    }
 }
 
 .send-buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.direct-email {
-    background: #c4c4c4;
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    width: 100%;
-}
 
-.direct-email:hover {
-    background: #757575;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.3);
-}
 
-.say-hi {
 
-}
-
-@keyframes hi {
-    
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }

@@ -7,7 +7,7 @@
     <title>Contact</title>
 </head>
 <body>
-    <h1>Say hi!</h1>
+    <h1>say hi</h1>
     <header>
         <nav class="glass-nav">
             <a class="brand" href="index.html">JULIAN</a>
@@ -24,43 +24,65 @@
         </nav>
     </header>
     <section class="contact-section">
-    <div class="contact-container glass-form">
-        <h2>Get in Touch</h2>
-        <p class="contact-subtitle">dont be shy, i'm very approachable <br>have a project in mind or just want to say hi? send me an email :)</p>
-        
-        <form class="contact-form" action="https://formspree.io/f/your-form-endpoint" method="POST">
-            <div class="form-group">
-                <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
-                <label for="name" class="form-label">Your Name</label>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p class="contact-subtitle">dont be shy, i'm very approachable <br>have a project in mind or just want to say hi? send me an email :)</p>
             </div>
-            
-            <div class="form-group">
-                <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
-                <label for="email" class="form-label">Email Address</label>
-            </div>
-            
-            <div class="form-group">
-                <select id="subject" name="subject" class="form-input" required>
-                    <option value="" disabled selected>Select a subject</option>
-                    <option value="work">Work Inquiry</option>
-                    <option value="collaboration">Collaboration</option>
-                    <option value="question">Question</option>
-                    <option value="other">Other</option>
-                </select>
-                <label for="subject" class="form-label">Subject</label>
-            </div>
-            
-            <div class="form-group">
-                <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
-                <label for="message" class="form-label">Your Message</label>
-            </div>
-            <div class="send-buttons">
-                <button type="submit" class="submit-btn">Send Message</button> 
-                <a class="direct-email" href="mailto:1836.cy@proton.me">Email me directly</a>
-            </div>
-            
-        </form>
-    </div>
-</section>
+            <form class="contact-form" action="" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
+                    <label for="name" class="form-label">Your Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
+                    <label for="email" class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" required class="form-input" placeholder=" ">
+                    <label for="subject" class="form-label">Subject</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
+                    <label for="message" class="form-label">Tell me how great (or not great) I am</label>
+                </div>
+                <div class="send-buttons">
+                    <button type="submit" class="submit-btn">Send Message</button> 
+                    <button type="link" class="direct-email" onclick="window.location.href = 'mailto:1836.cy@proton.me'">Email me directly</button>
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
+<footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="index.html" class="footer-logo">JULIAN</a>
+            <p class="footer-tagline">Making things since 2022</p>
+            <p class="footer-copyright" style="max-width: 20vh;">I would put a copyright thing here but just like dont steal my stuff without credit (no commerical use as well) thank you</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Navigation</h4>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Socials</h4>
+                <ul class="footer-nav">
+                    <li><a href="https://github.com/De1836">GitHub</a></li>
+                    <li><a href="mailto:1836.cy@proton.me">Email</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
