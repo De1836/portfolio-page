@@ -559,6 +559,7 @@ img.work-media {
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10%;
 }
 
 .about-main span {
@@ -572,14 +573,6 @@ img.work-media {
     margin-bottom: 16px;
     font-size: 50px;
     margin-top: -50px;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    transform: translateY(-20px);
-    opacity: 0;
-}
-
-.about-main h1.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .about-main p {
@@ -587,6 +580,23 @@ img.work-media {
     line-height: 1.8;
     color: #b7bec5;
     max-width: 70ch;
+}
+
+/* Initial state (hidden) */
+.about-main h1,
+.about-main p, 
+.skill div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state */
+.about-main h1.visible,
+.about-main p.visible,
+.skill div {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .about-skills {
@@ -766,13 +776,15 @@ img.work-media {
 }
 
 .direct-email {
-    background: #575757;
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
 }
 
 .direct-email:hover {
-    background: #757575;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(95, 95, 95, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-color: #666;
 }
 
 .submit-btn:hover {
