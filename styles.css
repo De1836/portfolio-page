@@ -231,9 +231,8 @@ footer {
 
 /* Works section under hero */
 .work-imgs {
-    padding: 0 10%;
-    max-width: 1400px;
-    margin: 0 auto 16px auto;
+    padding: 0 5vh;
+    max-width: 1200px;
     width: 100%;
 }
 
