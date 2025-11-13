@@ -29,12 +29,13 @@
                 <h2>Get in Touch</h2>
                 <p class="contact-subtitle">dont be shy, i'm very approachable <br>have a project in mind or just want to say hi? send me an email :)</p>
             </div>
-            <form class="contact-form" action="" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
                     <label for="name" class="form-label">Your Name</label>
                 </div>
-                
+
                 <div class="form-group">
                     <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
                     <label for="email" class="form-label">Email Address</label>
@@ -51,7 +52,6 @@
                 </div>
                 <div class="send-buttons">
                     <button type="submit" class="submit-btn">Send Message</button> 
-                    <button type="link" class="direct-email" onclick="window.location.href = 'mailto:1836.cy@proton.me'">Email me directly</button>
                 </div>
             </form>
         </div>

@@ -745,7 +745,6 @@ img.work-media {
     color: #aeb4b9;
     pointer-events: none;
     transition: all 0.3s ease;
-    background: rgba(20, 20, 22, 0.6);
     padding: 0 4px;
     transform-origin: left top;
 }
@@ -754,7 +753,6 @@ img.work-media {
 .form-input:not(:placeholder-shown) + .form-label {
     transform: translateY(-24px) scale(0.9);
     color: #fff;
-    background: rgba(20, 20, 22, 0.8);
 }
 
 .submit-btn, .direct-email {
