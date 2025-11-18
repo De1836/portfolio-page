@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="works-hover.js"></script>
     <title>About</title>
 </head>
 <body>
@@ -13,7 +15,7 @@
             <ul class="nav-links">
                 <li><a href="about.html">About</a></li>
                 <li><a href="works.html">Works</a></li>
-                <li><a href="frequently-asked-questions.html">FAQ</a></li>
+                               <li><a href="frequently-asked-questions.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <ul class="social-links">
@@ -46,57 +48,71 @@
         </div>
         </section>
         <section class="work-imgs">
-            <h2>some of my works in Blender</h2>
-            <div class="work-imgs-content">
-                <div class="work-imgs">
-                    <div class="work-img" onclick="window.location.href = 'works.html'">
-                        <img src="img/profile.png" class="work-media" alt="Robotic arm render">
-                        <h3 class="work-img-title">Robotic arm</h3>
-                        <p class="work-img-info">Robot arm - 3D model, from a course by Blenderbros (jump start hard surface modelling course). Made in Blender.</p>
-                    </div>
-                    <div class="work-img" onclick="window.location.href = 'works.html'">
-                        <img src="img/bin(final-1.1).png" class="work-media">
-                        <h3 class="work-img-title">Smart Bin</h3>
-                        <p class="work-img-info">Smart Bin - 3D model, made for cornerstones. Made in Blender.</p>
-                    </div>
-                    <div class="work-img" onclick="window.location.href = 'works.html'">
-                        <img src="img/iphone-17-max-(4).png" class="work-media">
-                        <h3 class="work-img-title">iPhone 17 Max</h3>
-                        <p class="work-img-info">iPhone 17 Max - 3D model, made for cornerstones. Made in Blender.</p>
-                    </div>
-                </div>
-            <br>
+            <h2>Selected works</h2>
+            <div class="selected-works-div">
+                <h2 class="works-hover">Robot arm</h2>
+            </div>
             <a href="works.html" class="button button-secondary">View more</a>
         </section>
-        
+        <section class="contact">
+            <div class="index-contact-right">
+                <p>Have a project in mind or just want to say hi? Send me an email, I'm very approachable!</p>
+            </div>
+            <div class="index-contact-left">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="7bb1a7b2-43fe-418a-9a1d-323813f5a8fc">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
+                    <label for="name" class="form-label">Your Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
+                    <label for="email" class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" required class="form-input" placeholder=" ">
+                    <label for="subject" class="form-label">Subject</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
+                    <label for="message" class="form-label">Tell me how great (or not great) I am</label>
+                </div>
+                <div class="send-buttons">
+                    <button type="submit" class="submit-btn">Send Message</button> 
+                </div>
+            </form>
+            </div>
+        </section>
     </main>
 </body>
-<footer>
-    <div class="footer-content">
-        <div class="footer-left">
-            <a href="index.html" class="footer-logo">JULIAN</a>
-            <p class="footer-tagline">Making things since 2022</p>
-            <p class="footer-copyright" style="max-width: 20vh;">I would put a copyright thing here but just like dont steal my stuff without credit (no commerical use as well) thank you</p>
-        </div>
-        <div class="footer-links">
-            <div class="footer-column">
-                <h4>Navigation</h4>
-                <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="works.html">Works</a></li>
-                    <li><a href="frequently-asked-questions.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="footer-logo">JULIAN</a>
+                <p class="footer-tagline">Making things since 2022</p>
+                <p class="footer-copyright" style="max-width: 20vh;">I would put a copyright thing here but just like dont steal my stuff without credit (no commerical use as well) thank you</p>
             </div>
-            <div class="footer-column">
-                <h4>Socials</h4>
-                <ul class="footer-nav">
-                    <li><a href="https://github.com/De1836">GitHub</a></li>
-                    <li><a href="mailto:1836.cy@proton.me">Email</a></li>
-                </ul>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="works.html">Works</a></li>
+                        <li><a href="frequently-asked-questions.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Socials</h4>
+                    <ul class="footer-nav">
+                        <li><a href="https://github.com/De1836">GitHub</a></li>
+                        <li><a href="mailto:1836.cy@proton.me">Email</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </html>
