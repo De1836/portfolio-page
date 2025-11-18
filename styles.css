@@ -996,3 +996,11 @@ img.work-media {
         transform: translateX(-50%);
     }
 }
+
+.faq-section {
+    list-style: none;
+    background-color: #4d4d4d7a;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
