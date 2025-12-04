@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="cursor.js"></script>
     <script src="works-hover.js"></script>
     <title>About</title>
 </head>
-<body>
+<body class="loading">
+    <!-- Add these inside your <body> tag, at the very top -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
     <header id="header">
         <nav class="glass-nav fade-down">
             <a class="brand" href="index.html">JULIAN</a>
@@ -56,11 +61,11 @@
         </section>
         <section class="contact">
             <div class="index-contact-right">
-                <p>Have a project in mind or just want to say hi? Send me an email, I'm very approachable!</p>
+                <p>Have a project in mind or just want to say hi? Send me an email, I'm very approachable :)</p>
             </div>
             <div class="index-contact-left">
             <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="7bb1a7b2-43fe-418a-9a1d-323813f5a8fc">
+                <input type="hidden" name="access_key" value="">
                 <div class="form-group">
                     <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
                     <label for="name" class="form-label">Your Name</label>
