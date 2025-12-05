@@ -414,26 +414,6 @@ a:hover {
 .mb-1 { margin-bottom: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
 .mb-2 { margin-bottom: 1rem; }
-.glass-nav {
-    position: fixed; /* ensure it always stays visible */
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto;
-    width: min(1100px, calc(100% - 48px));
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 10px;
-    border-radius: 9999px;
-    background: rgba(20, 20, 22, 0.6);
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
-    z-index: 1000;
-    animation: fade-down 1s ease-in-out;
-}
 
 .brand {
     font-size: 0.9rem;
@@ -448,14 +428,6 @@ a:hover {
 .nav-active {
     color: #8a8a8a;
     text-decoration: underline;
-}
-
-.glass-nav .nav-links{
-    list-style: none;
-    display: flex;
-    gap: 28px;
-    margin: 0;
-    padding: 0 6px 0 0;
 }
 
 .social-links {
@@ -1249,7 +1221,7 @@ img.work-media {
 
 /* Custom Cursor Styles */
 * {
-    cursor: none;
+    cursor: default;
 }
 
 .cursor {
@@ -1276,6 +1248,7 @@ img.work-media {
     transition: all 0.1s ease;
     will-change: transform;
     transform-origin: center;
+    transition: all 0.3s ease, width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
 }
 
 /* Hover states */
