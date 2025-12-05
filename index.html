@@ -3,51 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Julian's Portfolio - Frontend Developer & Creative Technologist">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="scripts/cursor.js"></script>
-    <script src="scripts/interactionobserver.js"></script>
-    <script src="scripts/works-hover.js"></script>
     <script src="scripts/navbar.js"></script>
-    <title>About</title>
+    <script src="scripts/copy.js"></script>
+    <title>Julian - Frontend Developer</title>
 </head>
 <body>
-    <!-- <div class="cursor"></div>
-    <div class="cursor-follower"></div> -->
     <header id="header">
-        <nav id="navbar">
-        </nav>
+        <nav id="navbar"></nav>
     </header>
     <main class="main">
-        <section class="profile-row">
-        <div class="profile-content">
-            <h1>im julian :)</h1>
-            <h2>doer of many things</h2>
-            <span class="i-am">I'm a</span>
-            <div class="scrolling-txt-div">
-                <span class="scrolling-text">Programmer</span>
-                <span class="scrolling-text">Frontend Developer</span>
-                <span class="scrolling-text">Cuber</span>
-                <span class="scrolling-text">3D Designer</span>
-                <span class="scrolling-text">Human</span>
-                <span class="scrolling-text">Violinist</span>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi, I'm Julian</h1><span>
+                    <h2 class="hero-subtitle">Frontend Developer & Creative Technologist</h2>
+                    <p class="hero-description">I make things.</p>
+                    <div class="hero-buttons">
+                        <a href="#work" class="button button-primary">View My Work</a>
+                        <a href="contact.html" class="button button-secondary">Get in Touch</a>
+                    </div>
+                </div>
             </div>
-            <div class="main-buttons">
-                <a href="contact.html" class="button button-primary">Get in Touch</a>
-                <a href="works.html" class="button button-secondary">View My Work</a>
+                </section>
+        
+        <section class="info-grid-section">
+            <div class="container">
+                <div class="info-grid">
+                    <!-- First row -->
+                    <div class="info-card horizontal-wide">
+                        <div>
+                            <h3 class="info-card-title">Specializing in</h3>
+                            <p class="info-card-value">Frontend Development & 3d modelling</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card vertical">
+                        <h3 class="info-card-title">Location</h3>
+                        <p class="info-card-value">Hong Kong (GMT+8)</p>
+                    </div>
+                    
+                    <!-- Second row -->
+                    <div class="info-card horizontal">
+                        <h3 class="info-card-title">Time Zone</h3>
+                        <p class="info-card-value">GMT+8</p>
+                    </div>
+                    
+                    <div class="info-card horizontal">
+                        <h3 class="info-card-title">Say hi</h3>
+                        <p class="info-card-content">I'm open to working on any projects you have in mind... for a price hehehehehehehehe</p>
+                        <div class="copy-email" onclick="copy('1836.cy@proton.me')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                            <span>1836.cy@proton.me</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card horizontal">
+                        <h3 class="info-card-title">Experience</h3>
+                        <p class="info-card-value">3+ Years</p>
+                        <p class="info-card-content">That's just a number though! I might have more or less than 3 years worth of experience... why don't you commission me to find out?</p>
+                    </div>
+                    
+                    <!-- Full width card -->
+                    <div class="info-card full-width">
+                        <div class="info-card-content">
+                            <h3 class="info-card-title">Currently</h3>
+                            <p class="info-card-value">Working on 2 websites</p>
+                        </div>
+                        <a href="contact.html" class="button button-primary">Add more to my workload</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="main-image">
-            <img src="img/profile.png" class="profile-pic">
-        </div>
         </section>
-        <section class="work-imgs">
-            <h2>Selected works</h2>
-            <div class="selected-works-div">
-                <h2 class="works-hover">Robot arm</h2>
+        
+        <section id="work" class="featured-work">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Work</h2>
+                    <p class="section-subtitle">A selection of my recent projects</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <a href="works.html#project1" class="project-card">
+                        <div class="project-image">
+                            <img src="img/robot-arm.jpg" alt="Robot Arm Project">
+                        </div>
+                        <div class="project-info">
+                            <h3>Robotic Arm</h3>
+                            <p>3D modeled and animated robotic arm created in Blender</p>
+                            <div class="project-tags">
+                                <span>Blender</span>
+                                <span>3D Modeling</span>
+                                <span>Animation</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="works.html#project2" class="project-card">
+                        <div class="project-image">
+                            <img src="img/smart-bin.jpg" alt="Smart Bin Project">
+                        </div>
+                        <div class="project-info">
+                            <h3>Smart Bin</h3>
+                            <p>Concept design for an IoT-enabled smart waste bin</p>
+                            <div class="project-tags">
+                                <span>Product Design</span>
+                                <span>IoT</span>
+                                <span>3D Modeling</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="view-all">
+                    <a href="works.html" class="button button-text">View All Projects →</a>
+                </div>
+            </div>
+        </section>
+        <section class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <p class="section-subtitle">Technologies I work with</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Vue.js</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skill-tags">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>Python</span>
+                            <span>MongoDB</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Design & Tools</h3>
+                        <div class="skill-tags">
+                            <span>Figma</span>
+                            <span>Blender</span>
+                            <span>Git</span>
+                            <span>Docker</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About Me</h2>
+                        <p>I'm do many things, but I mainly code and design frontends.</p>
+                        <p>In addition to coding, I do 3D modelling and design, robotics, violin and speedcubing.</p>
+                        <a href="about.html" class="button button-outline">More About Me</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="img/profile.png" alt="Julian" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Have a project in mind?</h2>
+                <p>I'm always open to discussing product design work or partnership opportunities.</p>
+                <a href="contact.html" class="button button-primary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
             </div>
             <a href="works.html" class="button button-secondary">View more</a>
         </section>
@@ -85,10 +231,41 @@
         </section>
     </main>
 </body>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="index.html" class="footer-logo">JULIAN</a>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">JULIAN</a>
+                    <p>Building digital experiences that make an impact.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="works.html">Work</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Connect</h4>
+                        <a href="mailto:your.email@example.com">Email</a>
+                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Julian. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
                 <p class="footer-tagline">Making things since 2022</p>
                 <p class="footer-copyright" style="max-width: 20vh;">I would put a copyright thing here but just like dont steal my stuff without credit (no commerical use as well) thank you</p>
             </div>

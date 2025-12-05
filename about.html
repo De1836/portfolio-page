@@ -3,132 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Julian - Frontend Developer & Creative Technologist">
     <link rel="stylesheet" href="styles.css">
-    <script src="interactionobserver.js"></script>
-    <title>About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <title>About | Julian - Frontend Developer</title>
 </head>
 <body>
-    <header>
-        <nav class="glass-nav">
-            <a class="brand" href="index.html">JULIAN</a>
-            <ul class="nav-links">
-                <li class="nav-active"><a href="about.html">About</a></li>
-                <li><a href="works.html">Works</a></li>
-                <li><a href="frequently-asked-questions.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <ul class="social-links">
-                <li><a href="https://github.com/De1836"><img src="img/github-mark-white.png" class="social-img-link"></a></li>
-                <li><a href="mailto:1836.cy@proton.me"><img src="https://framerusercontent.com/images/DSG6uQUUujv0hxhNpDXMLk3xJis.svg" class="social-img-link"></a></li> <!-- email, burner account -->
-            </ul>
-        </nav>
+    <header id="header">
+        <nav id="navbar"></nav>
     </header>
-    <main>
-        <section class="hello">
-            <div class="hello-inner">
-                <p class="hello-there"><span class="hello-world" onclick="alert('i swear im not a robot')">hello world</span>, i'm</p>
-                <h1 class="hello-name">Julian :)</h1>
+    <main class="main">
+        <section class="about-me-section">
+            <div class="about-me-container">
+                <div class="about-me-text">
+                    <p class="about-me-intro">MORE ABOUT ME</p>
+                    <h1>I'm Julian, a<br><span class="gradient-text">creative engineer</span></h1>
+                    <p>I'm a proactive full-stack developer passionate about creating dynamic web experiences. From frontend to backend, I thrive on solving complex problems with clean, efficient code.</p>
+                    <p>When I'm not immersed in work, I'm exploring new ideas and staying curious. Life's about balance, and I love embracing every part of it.</p>
+                    <p>I believe in waking up each day eager to make a difference!</p>
+                </div>
+                <div class="about-me-image-container">
+                    <img src="img/profile.png" alt="Julian">
+                    <p>I Code</p>
+                </div>
             </div>
-        </section>
-        <br style="margin-bottom: 100px;">
-        <section class="about-main">
-            <h1>About Me</h1>
-            <p>
-                I do many things, like robotics, blender, 3d design, programming, web design, and more. 
-                I do most of my work myself or in a small team, but I'm open to working with others. 
-                I'm also open to learning new things and trying new things. I've been doing this for 
-                about 2 years now. Huge nerd, I know.
-            </p>
         </section>
     </main>
-
-    <br style="margin-bottom: 40px;">
-    <section class="about-skills">
-        <h1>My Skills</h1>
-        <div class="skills">
-            <div class="skill">
-                <h2>Programming</h2>
-                <ul>
-                    <li>Python</li>
-                    <li>C++</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li><i>blocks (ew)</i></li>
-                </ul>
-                
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">JULIAN</a>
+                    <p>Building digital experiences that make an impact.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="works.html">Work</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/De1836">GitHub</a>
+                        <a href="mailto:1836.cy@proton.me">Email</a>
+                    </div>
+                </div>
             </div>
-            <div class="skill">
-                <h2>3D Design (Cad and modelling)</h2>
-                <ul>
-                    <li>Blender</li>
-                    <li>Onshape</li>
-                    <li>Protobot</li>
-                </ul>
-                <p>Basic knowledge of cad in protobot, intermediate knowledge of cad in onshape, and highly proficient in blender.</p>
-            </div>
-            <div class="skill">
-                <h2>Robotics & engineering</h2>
-                <ul>
-                    <li>Arduino</li>
-                    <li>VEX IQ + V5</li>
-                    <li>Microbit</li>
-                </ul>
-            </div>
-            <div class="skill">
-                <h2>Misc flashy stuff to show off</h2>
-                <ul>
-                    <li>AI-900 certification (AI Fundamentals)</li>
-                    <li>Grade 5 music theory certification (With distinction)</li>
-                    <li>One of 3 planners for THE stamford scrimmage (2025)</li>
-                </ul>
-            </div>
-            <div class="skill">
-                <h2>Currently working as...</h2>
-                <ul>
-                    <li>Main coder & team leader at 21169K (V5 team)</li>
-                    <li>Middle school VEX IQ assistant coach</li>
-                    <li>Dolphins House captain</li>
-                    <li>Web designer and reporter at Lion Rock news</li>
-                </ul>
-            </div>
-            <div class="skill">
-                <h2>Learning...</h2>
-                <ul>
-                    <li>Web Design</li>
-                    <li>Backend development (JS, JSX, TSX, React, Node.js, etc.)</li>
-                    <li>App development</li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Julian. All rights reserved.</p>
             </div>
         </div>
-    </section>
-
+    </footer>
 </body>
-<footer>
-    <div class="footer-content">
-        <div class="footer-left">
-            <a href="index.html" class="footer-logo">JULIAN</a>
-            <p class="footer-tagline">Making things since 2022</p>
-            <p class="footer-copyright" style="max-width: 20vh;">I would put a copyright thing here but just like dont steal my stuff without credit (no commerical use as well) thank you</p>
-        </div>
-        <div class="footer-links">
-            <div class="footer-column">
-                <h4>Navigation</h4>
-                <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="works.html">Works</a></li>
-                    <li><a href="tools.html">Tools</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Socials</h4>
-                <ul class="footer-nav">
-                    <li><a href="https://github.com/De1836">GitHub</a></li>
-                    <li><a href="mailto:1836.cy@proton.me">Email</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
 </html>
