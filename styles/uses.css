@@ -1,0 +1,138 @@
+/* Header Section */
+.uses-header {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.uses-header .subtitle {
+    font-size: 0.875rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.uses-header h1 {
+    font-family: 'serif';
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+/* Main Layout */
+.uses-container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+/* Aside Navigation (Left Column) */
+.uses-nav {
+    flex: 0 0 200px;
+}
+
+.uses-nav ul {
+    list-style: none;
+    position: sticky;
+    top: 120px;
+}
+
+.uses-nav li a {
+    display: block;
+    padding: 1rem;
+    color: #aaa;
+    text-decoration: none;
+    border-left: 2px solid #222;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.uses-nav li a:hover {
+    color: #fff;
+    border-left: 2px solid #fff;
+}
+
+/* Content (Right Column) */
+.uses-content {
+    flex: 1;
+}
+
+.uses-content section {
+    margin-bottom: 4rem;
+}
+
+.uses-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #222;
+}
+
+.item-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.item-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.item-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.item-info p {
+    color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .uses-container {
+        flex-direction: column;
+    }
+
+    .uses-nav {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .uses-nav ul {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        border-bottom: 1px solid #222;
+        margin-bottom: 2rem;
+    }
+
+    .uses-nav li a {
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        padding: 0.5rem 0;
+    }
+
+    .uses-nav li a:hover {
+        border-left: none;
+        border-bottom: 2px solid #fff;
+    }
+}
+
+@media (max-width: 600px) {
+    .uses-header h1 {
+        font-size: 3rem;
+    }
+
+    .item-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Observe elements
-    document.querySelectorAll('.about-main h1, .about-main p, .skill').forEach(el => {
+    document.querySelectorAll('.hero-title, .hero-subtitle, .hero-description, .section-title, .section-subtitle, .info-card, .card, .about-card, .about-text').forEach(el => {
         observer.observe(el);
     });
 });

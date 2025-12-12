@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My Work | Julian - Frontend Developer & Creative Technologist">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/works.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="scripts/navbar.js"></script>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/interactionobserver.js"></script>
+    <script src="scripts/index-works-cards.js"></script>
     <title>My Work | Julian - Frontend Developer</title>
 </head>
 <body>
@@ -28,37 +32,71 @@
 
         <section id="work" class="featured-work">
             <div class="container">
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/robot-arm.jpg" alt="Robot Arm Project">
+                <div class="featured-work-container">
+                    <div class="cards">
+                        <div class="card" id="card-1">
+                            <div class="card-content">
+                                <img src="img/profile.png" alt="Robotic Arm project screenshot">
+                            </div>
                         </div>
-                        <div class="project-info">
-                            <h3>Robotic Arm</h3>
-                            <p>3D modeled and animated robotic arm created in Blender.</p>
-                            <div class="project-tags">
-                                <span>Blender</span>
-                                <span>3D Modeling</span>
-                                <span>Animation</span>
+                        <div class="card" id="card-2">
+                            <div class="card-content">
+                                <img src="img/bin(final-1.1).png" alt="Smart Bin project screenshot">
+                            </div>
+                        </div>
+                        <div class="card" id="card-3">
+                            <div class="card-content">
+                                <img src="img/iphone-17-max-(4).png" alt="iPhone 17 Max project screenshot">
+                            </div>
+                        </div>
+                        <div class="card" id="card-4">
+                            <div class="card-content">
+                                <img src="img/portfolio.png" alt="Portfolio Website project screenshot">
+                            </div>
+                        </div>
+                        <div class="card" id="card-5">
+                            <div class="card-content">
+                                <img src="img/steminn-website.jpg" alt="Steminn Reverse Engineering Website project screenshot">
+                            </div>
+                        </div>
+                        <div class="card" id="card-6">
+                            <div class="card-content">
+                                <img src="img/ui-dashboard.jpg" alt="Data collection form project screenshot">
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/smart-bin.jpg" alt="Smart Bin Project">
+                    <div class="about-cards">
+                        <div class="about-card" data-card="card-1">
+                            <h3>Robotic Arm</h3>
+                            <p>A render that I made with the BlenderBros hard surface modelling jump start course. Not much to it.</p>
                         </div>
-                        <div class="project-info">
+                        <div class="about-card" data-card="card-2">
                             <h3>Smart Bin</h3>
-                            <p>Concept design for an IoT-enabled smart waste bin.</p>
-                            <div class="project-tags">
-                                <span>Product Design</span>
-                                <span>IoT</span>
-                                <span>3D Modeling</span>
-                            </div>
+                            <p>A concept for a smart bin made for Cornerstones. It was based on the smart bin from Simplehuman, but with a few changes, such as app control, bag sealing, and notifications when the bin is full. It was also made in Blender.</p>
+                        </div>
+                        <div class="about-card" data-card="card-3">
+                            <h3>iPhone 17 Max</h3>
+                            <p>A 3d model of the iPhone Pro, made in Blender for a cornerstones project. Rendered with cycles. This was also the first time I used meshmachine in Blender.</p>
+                        </div>
+                        <div class="about-card" data-card="card-4">
+                            <h3>Portfolio Website</h3>
+                            <p>Static portfolio website as a STEMinn project. Features some javascript/jquery.</p>
+                        </div>
+                        <div class="about-card" data-card="card-5">
+                            <h3>Steminn Reverse Engineering Website</h3>
+                            <p>A basic static website made to display the products I reverse engineered for STEMinn. It's not the best, but it works.</p>
+                        </div>
+                        <div class="about-card" data-card="card-6">
+                            <h3>Data collection form</h3>
+                            <p>Website made to collect data for my Cornerstones PD project. Form is nothing special since it was coded with AI, but I learned a lot about web development and backend development through that project.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="cta-section">
+            <p>Like my work? Wanna commission me for a project?</p>
+            <a href="contact.html" class="cta-button">Contact me</a>
         </section>
     </main>
     <footer class="footer">
@@ -66,7 +104,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo">JULIAN</a>
-                    <p>Building digital experiences that make an impact.</p>
+                    <p>Your friendly neighbourhood developer</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Julian's Portfolio - Frontend Developer & Creative Technologist">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +14,8 @@
     <script src="scripts/cursor.js"></script>
     <script src="scripts/navbar.js"></script>
     <script src="scripts/copy.js"></script>
+    <script src="scripts/interactionobserver.js"></script>
+    <script src="scripts/index-works-cards.js"></script>
     <title>Julian - Frontend Developer</title>
 </head>
 <body>
@@ -24,7 +27,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">Hi, I'm Julian</h1><span>
-                    <h2 class="hero-subtitle">Frontend Developer & Creative Technologist</h2>
+                    <h2 class="hero-subtitle">Frontend Developer & Software Engineer</h2>
                     <p class="hero-description">I make things.</p>
                     <div class="hero-buttons">
                         <a href="#work" class="button button-primary">View My Work</a>
@@ -45,125 +48,101 @@
                         </div>
                     </div>
                     
-                    <div class="info-card vertical">
+                    <div class="info-card vertical-wide vertical">
                         <h3 class="info-card-title">Location</h3>
                         <p class="info-card-value">Hong Kong (GMT+8)</p>
                     </div>
                     
                     <!-- Second row -->
                     <div class="info-card horizontal">
-                        <h3 class="info-card-title">Time Zone</h3>
-                        <p class="info-card-value">GMT+8</p>
+                        <h3 class="info-card-title">Experience</h3>
+                        <p class="info-card-value">3+ Years</p>
+                        <p class="info-card-content">That's just a number though! I might have more or less than 3 years worth of experience... why don't you commission me to find out?</p>
                     </div>
                     
                     <div class="info-card horizontal">
                         <h3 class="info-card-title">Say hi</h3>
                         <p class="info-card-content">I'm open to working on any projects you have in mind... for a price hehehehehehehehe</p>
-                        <div class="copy-email" onclick="copy('1836.cy@proton.me')">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
-                            <span>1836.cy@proton.me</span>
+                        <script>
+                            window.onload = function() {
+                                initcopy('1836.cy@proton.me', '.copy-email');
+                            }
+                        </script>
+                        <div class="copy-email" onclick="copy('1836.cy@proton.me', '1836.cy@proton.me', '.copy-email')">
+                            
                         </div>
-                    </div>
-                    
-                    <div class="info-card horizontal">
-                        <h3 class="info-card-title">Experience</h3>
-                        <p class="info-card-value">3+ Years</p>
-                        <p class="info-card-content">That's just a number though! I might have more or less than 3 years worth of experience... why don't you commission me to find out?</p>
                     </div>
                     
                     <!-- Full width card -->
                     <div class="info-card full-width">
                         <div class="info-card-content">
                             <h3 class="info-card-title">Currently</h3>
-                            <p class="info-card-value">Working on 2 websites</p>
+                            <p class="info-card-value">Working on 2 websites + Learning rust and node.js</p>
                         </div>
-                        <a href="contact.html" class="button button-primary">Add more to my workload</a>
                     </div>
                 </div>
             </div>
         </section>
-        
         <section id="work" class="featured-work">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Featured Work</h2>
                     <p class="section-subtitle">A selection of my recent projects</p>
                 </div>
-                
-                <div class="projects-grid">
-                    <a href="works.html#project1" class="project-card">
-                        <div class="project-image">
-                            <img src="img/robot-arm.jpg" alt="Robot Arm Project">
-                        </div>
-                        <div class="project-info">
-                            <h3>Robotic Arm</h3>
-                            <p>3D modeled and animated robotic arm created in Blender</p>
-                            <div class="project-tags">
-                                <span>Blender</span>
-                                <span>3D Modeling</span>
-                                <span>Animation</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="works.html#project2" class="project-card">
-                        <div class="project-image">
-                            <img src="img/smart-bin.jpg" alt="Smart Bin Project">
-                        </div>
-                        <div class="project-info">
-                            <h3>Smart Bin</h3>
-                            <p>Concept design for an IoT-enabled smart waste bin</p>
-                            <div class="project-tags">
-                                <span>Product Design</span>
-                                <span>IoT</span>
-                                <span>3D Modeling</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="view-all">
-                    <a href="works.html" class="button button-text">View All Projects →</a>
-                </div>
             </div>
-        </section>
-        <section class="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Skills & Expertise</h2>
-                    <p class="section-subtitle">Technologies I work with</p>
+            <div class="featured-work-container">
+                <div class="cards">
+                    <div class="card" id="card-1">
+                        <div class="card-content">
+                            <img src="img/project-1.png" alt="Form project">
+                        </div>
+                    </div>
+                    <div class="card" id="card-2">
+                        <div class="card-content">
+                            <img src="img/project-2.png" alt="Portfolio project">
+                        </div>
+                    </div>
+                    <div class="card" id="card-3">
+                        <div class="card-content">
+                            <img src="img/placeholder.png" alt="placeholder">
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skill-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>React</span>
-                            <span>Vue.js</span>
+                <div class="about-cards">
+                    <div class="about-card" data-card="card-1">
+                        <h3>Data collection form</h3>
+                        <p>An html form built with html, css and javascript to learn more about backend.</p>
+                        <ul>
+                            <li>Mainly ai-coded</li>
+                            <li>Hosted on Vercel</li>
+                            <li>Learned a bit about backend, and also vercel JSON and supabase with this project.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Supabase</span><span>Vercel</span>
                         </div>
                     </div>
-                    
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <div class="skill-tags">
-                            <span>Node.js</span>
-                            <span>Express</span>
-                            <span>Python</span>
-                            <span>MongoDB</span>
-                            <span>PostgreSQL</span>
+                    <div class="about-card" data-card="card-2">
+                        <h3>Interactive Portfolio</h3>
+                        <p>A clean, interactive portfolio built with HTML, CSS, and JavaScript.</p>
+                        <ul>
+                            <li>First project using JavaScript</li>
+                            <li>Interactive design with smooth animations</li>
+                            <li>Looks cool :D</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
                     </div>
-                    
-                    <div class="skill-category">
-                        <h3>Design & Tools</h3>
-                        <div class="skill-tags">
-                            <span>Figma</span>
-                            <span>Blender</span>
-                            <span>Git</span>
-                            <span>Docker</span>
-                            <span>AWS</span>
+                    <div class="about-card" data-card="card-3">
+                        <h3>Egg</h3>
+                        <p>Egg</p>
+                        <ul>
+                            <li>I ran out of good projects lol hahahahahahahahahahahahahaha</li>
+                            <li>Egg</li>
+                            <li>Egg</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span>Eggs</span><span>Eggs</span><span>Eggs</span><span>Eggs</span>
                         </div>
                     </div>
                 </div>
@@ -184,22 +163,16 @@
                 </div>
             </div>
         </section>
-
-        <!-- CTA Section -->
         <section class="cta">
             <div class="container">
-                <h2>Have a project in mind?</h2>
-                <p>I'm always open to discussing product design work or partnership opportunities.</p>
-                <a href="contact.html" class="button button-primary">Get in Touch</a>
+                <h2>Do you like my website?</h2>
+                <p>Scroll down to tell me how amazing (or absolutely disgusting) my website is. Have a project in mind or want to say hi? Send me an email at <a href="mailto:1836.cy@proton.me">1836.cy@proton.me</a>.</p>
             </div>
         </section>
-    </main>
-            </div>
-            <a href="works.html" class="button button-secondary">View more</a>
-        </section>
-        <section class="contact">
+    </section>
+    <section class="contact">
             <div class="index-contact-right">
-                <p>Have a project in mind or just want to say hi? Send me an email, I'm very approachable :)</p>
+                <p>You can contact me here. If you don't like email, too bad lol I'm not going to give away more information</p>
             </div>
             <div class="index-contact-left">
             <form action="https://api.web3forms.com/submit" method="POST">
@@ -229,19 +202,14 @@
             </form>
             </div>
         </section>
-    </main>
+    </section>
 </body>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo">JULIAN</a>
-                    <p>Building digital experiences that make an impact.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    </div>
+                    <p>Your friendly neighbourhood developer</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-links-group">
@@ -253,39 +221,13 @@
                     </div>
                     <div class="footer-links-group">
                         <h4>Connect</h4>
-                        <a href="mailto:your.email@example.com">Email</a>
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/De1836">GitHub</a>
+                        <a href="mailto:1836.cy@proton.me">Email</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2023 Julian. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-                <p class="footer-tagline">Making things since 2022</p>
-                <p class="footer-copyright" style="max-width: 20vh;">I would put a copyright thing here but just like dont steal my stuff without credit (no commerical use as well) thank you</p>
-            </div>
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>Navigation</h4>
-                    <ul class="footer-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="works.html">Works</a></li>
-                        <li><a href="frequently-asked-questions.html">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Socials</h4>
-                    <ul class="footer-nav">
-                        <li><a href="https://github.com/De1836">GitHub</a></li>
-                        <li><a href="mailto:1836.cy@proton.me">Email</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </footer>

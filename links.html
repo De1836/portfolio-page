@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links - My Portfolio</title>
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/links.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/copy.js"></script>
+</head>
+<body>
+    <div id="cursor-glow"></div>
+    <div id="cursor-dot"></div>
+
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+
+    <div class="top-header">
+        <h1>Connect with <span class="gradient-text">Me</span></h1>
+    </div>
+
+    <main class="page-container">
+        <div class="profile-column">
+            <div class="profile-card">
+                <img src="img/me.png" alt="Profile Picture" class="profile-pic">
+                <h1 class="profile-name">Julian</h1>
+                <div class="profile-tags">
+                    <span>Developer</span>
+                    <span>Designer</span>
+                </div>
+                <div class="profile-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Hong Kong, China</p>
+                    <p><i class="fas fa-envelope"></i> 1836.cy@proton.me</p>
+                </div>
+                <script>
+                    window.onload = function() {
+                        initcopy('Email', '.copy-email');
+                    }
+                </script>
+                <div class="copy-email" onclick="copy('1836.cy@proton.me', 'Email', '.copy-email')">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="links-column">
+            <div class="links-header">
+                <h2></h2>
+            </div>
+            <div class="links-grid">
+                <a href="https://github.com/De1836" class="link-card" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <div class="link-text">
+                        <h3>GitHub</h3>
+                        <p>@De1836</p>
+                    </div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <div class="link-text">
+                        <h3>LinkedIn</h3>
+                        <p>Coming soon</p>
+                    </div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <div class="link-text">
+                        <h3>Twitter / X</h3>
+                        <p>Coming soon</p>
+                    </div>
+                </a>
+                <a href="#" class="link-card" target="_blank">
+                    <i class="fab fa-telegram-plane"></i>
+                    <div class="link-text">
+                        <h3>Telegram</h3>
+                        <p>Coming soon</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">JULIAN</a>
+                    <p>Your friendly neighbourhood developer</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-group">
+                        <h4>Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="works.html">Work</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/De1836">GitHub</a>
+                        <a href="mailto:1836.cy@proton.me">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Julian. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

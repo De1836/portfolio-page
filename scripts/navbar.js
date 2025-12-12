@@ -23,38 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         padding: 0 20px;
     `;
 
-    // Create greeting element
-    const greeting = document.createElement('span');
-    greeting.className = 'nav-greeting';
-    greeting.textContent = `Good ${new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 18 ? 'Afternoon' : 'Evening'}.`;
-    greeting.style.cssText = `
-        color: #aeb4b9;
-        text-decoration: none;
-        font-family: 'Outfit', sans-serif;
-        font-size: 0.95rem;
-        font-weight: 400;
-        padding: 12px 16px;
-        border-radius: 9999px;
-        display: inline-block;
-        cursor: default;
-        opacity: 1;
-        transition: opacity 0.5s ease-out;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        pointer-events: none;
-    `;
-    nav.appendChild(greeting);
-
-    // Create nav links container (initially hidden)
     const navLinksContainer = document.createElement('div');
     navLinksContainer.className = 'nav-links-container';
-    navLinksContainer.style.opacity = '0';
-    navLinksContainer.style.transition = 'opacity 0.5s ease-in-out';
     navLinksContainer.style.width = '100%';
-    
-    // Add navigation links
-    navLinksContainer.innerHTML = `
+    nav.appendChild(navLinksContainer);
+
+    const createNavLinks = () => {
+        navLinksContainer.innerHTML = `
         <ul class="nav-links" style="
             list-style: none;
             display: flex;
@@ -64,18 +39,132 @@ document.addEventListener('DOMContentLoaded', () => {
             align-items: center;
             justify-content: center;
             width: 100%;
+            position: relative;
         ">
             <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
             <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
             <li><a href="works.html" class="nav-link" data-page="works">Works</a></li>
-            <li><a href="frequently-asked-questions.html" class="nav-link" data-page="faq">FAQ</a></li>
+            <li class="more-container-wrapper">
+                <div class="more-container">
+                    <span class="nav-more">More</span>
+                    <svg class="nav-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aeb4b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down relative top-[1px] ml-1 size-3 transition duration-300" aria-hidden="true">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </div>
+                <div class="dropdown-menu">
+                    <a href="links.html" class="dropdown-item">Links</a>
+                    <a href="uses.html" class="dropdown-item">What I use</a>
+                    <a href="https://www.worldcubeassociation.org/persons/2025YINJ03" class="dropdown-item" target="_blank">WCA page?</a>
+                </div>
+            </li>
             <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
         </ul>`;
-    
-    // Add nav links to the container
-    nav.appendChild(navLinksContainer);
-    
-    // Style the nav links
+    };
+
+    // Style the more container
+    const styleMoreSpan = () => {
+        const moreContainerWrapper = document.querySelector('.more-container-wrapper');
+        const moreDiv = document.querySelector('.more-container');
+        const navMore = document.querySelector('.nav-more');
+        const dropdown = document.querySelector('.dropdown-menu');
+        
+        moreContainerWrapper.style.position = 'relative';
+        
+        moreDiv.style.cssText = ` 
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        `;
+
+        navMore.style.cssText = `
+            color: #aeb4b9;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        `;
+
+        dropdown.style.cssText = `
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(30, 30, 32, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 8px;
+            padding: 8px 0;
+            min-width: 180px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 8px 0;
+        `;
+
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.style.cssText = `
+                display: block;
+                padding: 10px 20px;
+                color: #e0e0e0;
+                text-decoration: none;
+                font-family: 'Outfit', sans-serif;
+                font-size: 0.9rem;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+            `;
+
+            item.addEventListener('mouseover', () => {
+                item.style.background = 'rgba(255, 255, 255, 0.1)';
+                item.style.color = 'white';
+            });
+
+            item.addEventListener('mouseout', () => {
+                item.style.background = 'transparent';
+                item.style.color = '#e0e0e0';
+            });
+        });
+
+        moreContainerWrapper.addEventListener('mouseenter', () => {
+            navMore.style.color = 'white';
+            const arrow = moreDiv.querySelector('.nav-arrow');
+            if (arrow) {
+                arrow.style.stroke = 'white';
+                arrow.style.transform = 'rotate(180deg)';
+            }
+            dropdown.style.opacity = '1';
+            dropdown.style.visibility = 'visible';
+            dropdown.style.transform = 'translateY(5px)';
+        });
+
+        moreContainerWrapper.addEventListener('mouseleave', () => {
+            navMore.style.color = '#aeb4b9';
+            const arrow = moreDiv.querySelector('.nav-arrow');
+            if (arrow) {
+                arrow.style.stroke = '#aeb4b9';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+            dropdown.style.opacity = '0';
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.transform = 'translateY(10px)';
+        });
+
+        const navArrow = moreDiv.querySelector('.nav-arrow');
+        if (navArrow) {
+            navArrow.style.cssText = `
+                transform: translateY(1px);
+                transition: all 0.3s ease;
+                margin-left: 4px;
+            `;
+        }
+    };
+
     const styleNavLinks = () => {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
@@ -86,25 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 font-size: 0.95rem;
                 font-weight: 400;
                 padding: 8px 16px;
-                border-radius: 9999px;
+                border-radius: 4px;
                 transition: all 0.3s ease;
                 display: inline-block;
             `;
 
             link.addEventListener('mouseover', () => {
-                link.style.color = '#ededed';
-                link.style.background = 'rgba(255, 255, 255, 0.1)';
+                if (!link.classList.contains('active')) {
+                    link.style.color = '#ededed';
+                }
             });
 
             link.addEventListener('mouseout', () => {
                 if (!link.classList.contains('active')) {
                     link.style.color = '#aeb4b9';
-                    link.style.background = 'transparent';
                 }
             });
         });
         
-        // Set active link based on current page
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const activeLink = document.querySelector(`.nav-link[href="${currentPage}"]`);
         if (activeLink) {
@@ -112,24 +200,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 background: rgba(255, 255, 255, 0.15);
                 color: #ededed;
                 font-weight: 500;
+                border-radius: 50px;
             `;
             activeLink.classList.add('active');
         }
     };
-    
-    // After 2 seconds, start the transition
-    setTimeout(() => {
-        // Fade out greeting
-        greeting.style.opacity = '0';
-        
-        // After fade out completes, remove greeting and show nav links
+
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        const greeting = document.createElement('span');
+        greeting.className = 'nav-greeting';
+        greeting.textContent = `Good ${new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 18 ? 'Afternoon' : 'Evening'}.`;
+        greeting.style.cssText = `
+            color: #aeb4b9;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            cursor: default;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        `;
+        nav.appendChild(greeting);
+        navLinksContainer.style.opacity = '0';
+        navLinksContainer.style.transition = 'opacity 0.5s ease-in-out';
+
         setTimeout(() => {
-            greeting.remove();
-            nav.style.justifyContent = 'space-between';
-            navLinksContainer.style.opacity = '1';
-            
-            // Initialize navigation styles and events
-            styleNavLinks();
-        }, 500); // Wait for fade out to complete
-    }, 2000);
+            greeting.style.opacity = '0';
+            setTimeout(() => {
+                greeting.remove();
+                nav.style.justifyContent = 'space-between';
+                createNavLinks();
+                navLinksContainer.style.opacity = '1';
+                styleNavLinks();
+                styleMoreSpan();
+            }, 500);
+        }, 2000);
+    } else {
+        nav.style.justifyContent = 'space-between';
+        createNavLinks();
+        navLinksContainer.style.opacity = '1';
+        styleNavLinks();
+        styleMoreSpan();
+    }
 });
