@@ -29,3 +29,111 @@
     background-color: #ddd;
     transform: translateY(-2px);
 }
+
+/* Works Section */
+.works-section {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 100px 5% 50px;
+    position: relative;
+}
+
+.works-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.works-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+    background: linear-gradient(to bottom, var(--bg-dark) 90%, transparent 100%);
+    padding: 20px 0;
+}
+
+.works-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.project-indicator {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.project-indicator .current-project {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.projects-container {
+    position: relative;
+    z-index: 1;
+}
+
+.project {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+    position: relative;
+}
+
+.project-content {
+    flex: 1;
+    max-width: 500px;
+    padding-right: 40px;
+}
+
+.project h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+.project p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-tags span {
+    background: rgba(58, 134, 255, 0.1);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(58, 134, 255, 0.2);
+}
+
+.project-image {
+    flex: 1;
+    max-width: 600px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.project.active .project-image {
+    transform: translateY(0);
+    opacity: 1;
+}
