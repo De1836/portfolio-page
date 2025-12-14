@@ -4,7 +4,10 @@
 
 /* Contact Form Section */
 .contact-form-section {
-    padding: var(--space-8) 0;
+    padding: var(--space-4) 0;
+    margin-top: -40vh;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-form {
@@ -91,4 +94,100 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-2);
+}
+
+.hero-title .gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-3) 0;
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.email-link:hover {
+    color: var(--primary);
+}
+
+.email-link .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.social-links-contact {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.social-links-contact a {
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.social-links-contact a:hover {
+    color: var(--primary);
+}
+
+.social-links-contact .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-top: var(--space-4);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 16px;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.submit-btn svg {
+    width: 18px;
+    height: 18px;
 }
