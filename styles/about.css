@@ -1,16 +1,24 @@
-/* About Me Section */
+/**
+ * =============================================
+ * ABOUT ME SECTION
+ * =============================================
+ * Styles for the main container of the about me page.
+ */
+
 .about-me-section {
     padding: var(--space-8) 0;
     margin: 10%;
 }
 
+/* Grid layout for the about me content, splitting text and image into two columns. */
 .about-me-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-    align-items: center;
+    display: grid;                  /* Enables grid layout */
+    grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+    gap: var(--space-6);            /* Space between grid items */
+    align-items: center;            /* Vertically aligns content in the center */
 }
 
+/* Styling for the introductory text (e.g., 'A Little About Me'). */
 .about-me-text .about-me-intro {
     font-size: var(--font-size-sm);
     color: var(--text-muted);
@@ -19,12 +27,14 @@
     margin-bottom: var(--space-3);
 }
 
+/* Main heading style for the about me section. */
 .about-me-text h1 {
     font-size: var(--font-size-6xl);
     font-family: 'Instrument Serif', serif;
     margin-bottom: var(--space-5);
 }
 
+/* Reusable class for creating text with a gradient background. */
 .gradient-text {
     background: linear-gradient(to right, var(--primary), var(--accent));
     -webkit-background-clip: text;
@@ -32,38 +42,50 @@
     background-clip: text;
 }
 
+/* Paragraph styling for the descriptive text. */
 .about-me-text p {
     font-size: var(--font-size-lg);
     line-height: 1.8;
     margin-bottom: var(--space-4);
 }
 
+/* Container for the profile image. */
 .about-me-image-container {
     text-align: center;
 }
 
+/* Styling for the profile image itself. */
 .about-me-image-container img {
     border-radius: 16px;
     box-shadow: var(--box-shadow);
     max-width: 80%;
 }
 
+/* Caption styling for the image. */
 .about-me-image-container p {
     margin-top: var(--space-3);
     font-style: italic;
 }
 
-/* FAQ Section */
+/**
+ * =============================================
+ * FAQ SECTION
+ * =============================================
+ * Styles for the Frequently Asked Questions section.
+ */
+
 .faq-section {
     max-width: 800px;
     margin: 0 auto;
 }
 
+/* Grid layout for the FAQ items. */
 .faq-grid {
     display: grid;
     gap: var(--space-5);
 }
 
+/* Styling for an individual FAQ item card. */
 .faq-item {
     background: var(--bg-light);
     padding: var(--space-5);
@@ -71,12 +93,14 @@
     border: 1px solid var(--border-color);
 }
 
+/* Styling for the question (heading) within an FAQ item. */
 .faq-item h3 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-3);
     color: var(--primary);
 }
 
+/* Styling for the answer (paragraph) within an FAQ item. */
 .faq-item p {
     color: var(--text-secondary);
 }

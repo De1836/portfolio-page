@@ -1,4 +1,20 @@
-/* CTA Section */
+/**
+ * =============================================
+ * WORKS PAGE STYLES
+ * =============================================
+ * This file contains styles specific to the 'Works' page, including the
+ * main project showcase and a call-to-action section.
+ */
+
+/**
+ * =============================================
+ * A. CALL-TO-ACTION (CTA) SECTION
+ * =============================================
+ * This section contains the call-to-action block, which includes a descriptive
+ * text and a button to prompt the user to take action.
+ */
+
+/* Styling for the call-to-action block. */
 .cta-section {
     text-align: center;
     padding: 4rem 2rem;
@@ -8,12 +24,14 @@
     margin: 2rem 0;
 }
 
+/* Descriptive text within the CTA section. */
 .cta-section p {
     font-size: 1.25rem;
     color: #aaa;
     margin-bottom: 1.5rem;
 }
 
+/* Call-to-action button styling. */
 .cta-section .cta-button {
     display: inline-block;
     padding: 0.75rem 2rem;
@@ -25,12 +43,21 @@
     transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Hover effect for the CTA button. */
 .cta-section .cta-button:hover {
     background-color: #ddd;
     transform: translateY(-2px);
 }
 
-/* Works Section */
+/**
+ * =============================================
+ * B. WORKS SECTION
+ * =============================================
+ * This section contains the main project showcase, including the header,
+ * project containers, and individual project styling.
+ */
+
+/* Main container for the entire works showcase. */
 .works-section {
     min-height: 100vh;
     background-color: var(--bg-dark);
@@ -39,12 +66,14 @@
     position: relative;
 }
 
+/* Centered container for the works content. */
 .works-container {
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
 }
 
+/* Sticky header for the works section, containing the title and project indicator. */
 .works-header {
     display: flex;
     justify-content: space-between;
@@ -57,27 +86,32 @@
     padding: 20px 0;
 }
 
+/* Main title for the works section. */
 .works-header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
 }
 
+/* Text indicating the current project number (e.g., '1 / 5'). */
 .project-indicator {
     font-size: 1.2rem;
     color: var(--text-muted);
 }
 
+/* Styling for the current project number. */
 .project-indicator .current-project {
     color: var(--primary);
     font-weight: 600;
 }
 
+/* Container for all the individual project sections. */
 .projects-container {
     position: relative;
     z-index: 1;
 }
 
+/* Styling for a single project showcase area. */
 .project {
     min-height: 100vh;
     display: flex;
@@ -87,12 +121,14 @@
     position: relative;
 }
 
+/* Container for the textual content of a project (title, description, tags). */
 .project-content {
     flex: 1;
     max-width: 500px;
     padding-right: 40px;
 }
 
+/* Project title. */
 .project h2 {
     font-size: 3rem;
     font-weight: 700;
@@ -100,6 +136,7 @@
     line-height: 1.1;
 }
 
+/* Project description. */
 .project p {
     font-size: 1.2rem;
     color: var(--text-secondary);
@@ -107,12 +144,14 @@
     line-height: 1.6;
 }
 
+/* Container for project technology tags. */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+/* Styling for an individual technology tag. */
 .project-tags span {
     background: rgba(58, 134, 255, 0.1);
     color: var(--primary);
@@ -133,6 +172,7 @@
     transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
+/* Animation for the project image when its section becomes active on scroll. */
 .project.active .project-image {
     transform: translateY(0);
     opacity: 1;

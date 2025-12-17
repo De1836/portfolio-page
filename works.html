@@ -1,26 +1,47 @@
+<!--
+    Works Page - Portfolio Website
+    Showcases a collection of projects with images and descriptions.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My Work | Julian - Frontend Developer & Creative Technologist">
+
+    <!-- Page Title -->
+    <title>My Work | Julian - Frontend Developer</title>
+
+    <!-- CSS Imports -->
     <link rel="stylesheet" href="styles/root.css">
     <link rel="stylesheet" href="styles/works.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JavaScript Imports -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="scripts/navbar.js"></script>
-    <script src="scripts/cursor.js"></script>
-    <script src="scripts/interactionobserver.js"></script>
-    <script src="scripts/index-works-cards.js"></script>
-    <title>My Work | Julian - Frontend Developer</title>
+    <script src="scripts/navbar.js" defer></script>
+    <script src="scripts/cursor.js" defer></script>
+    <script src="scripts/interactionobserver.js" defer></script>
+    <script src="scripts/index-works-cards.js" defer></script>
 </head>
 <body>
+    <!-- Custom Cursor Elements -->
+    <div id="cursor-glow"></div>
+    <div id="cursor-dot"></div>
+
+    <!-- Header with Navigation -->
     <header id="header">
+        <!-- Navigation bar is dynamically inserted by navbar.js -->
         <nav id="navbar"></nav>
     </header>
+    <!-- Main Content Area -->
     <main class="main">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -30,9 +51,11 @@
             </div>
         </section>
 
+        <!-- Featured Work Section -->
         <section id="work" class="featured-work">
             <div class="container">
                 <div class="featured-work-container">
+                    <!-- Project Image Cards -->
                     <div class="cards">
                         <div class="card" id="card-1">
                             <div class="card-content">
@@ -51,62 +74,102 @@
                         </div>
                         <div class="card" id="card-4">
                             <div class="card-content">
-                                <img src="img/portfolio.png" alt="Portfolio Website project screenshot">
+                                <img src="img/project2.png" alt="Portfolio Website project screenshot">
                             </div>
                         </div>
                         <div class="card" id="card-5">
                             <div class="card-content">
-                                <img src="img/steminn-website.jpg" alt="Steminn Reverse Engineering Website project screenshot">
+                                <img src="img/placeholder.png" alt="Steminn Reverse Engineering Website project screenshot">
                             </div>
                         </div>
                         <div class="card" id="card-6">
                             <div class="card-content">
-                                <img src="img/ui-dashboard.jpg" alt="Data collection form project screenshot">
+                                <img src="img/project1.png" alt="Data collection form project screenshot">
                             </div>
                         </div>
                     </div>
+
+                    <!-- Project Description Cards -->
                     <div class="about-cards">
                         <div class="about-card" data-card="card-1">
-                            <h3>Robotic Arm</h3>
-                            <p>A render that I made with the BlenderBros hard surface modelling jump start course. Not much to it.</p>
+                            <h3>Hard-Surface 3D Model: Robotic Arm</h3>
+                            <p>A detailed 3D model of a robotic arm, created as part of a hard-surface modeling course. This project focused on achieving realistic detail, clean topology, and complex mechanical shapes using advanced Blender techniques.</p>
+                            <ul>
+                                <li>Blender</li>
+                                <li>Hard-Surface Modeling</li>
+                                <li>Cycles Renderer</li>
+                            </ul>
                         </div>
                         <div class="about-card" data-card="card-2">
-                            <h3>Smart Bin</h3>
-                            <p>A concept for a smart bin made for Cornerstones. It was based on the smart bin from Simplehuman, but with a few changes, such as app control, bag sealing, and notifications when the bin is full. It was also made in Blender.</p>
+                            <h3>Product Concept: Smart Bin</h3>
+                            <p>A conceptual design for a smart home waste bin. Features included automatic bag sealing, app-based controls, and fullness notifications. The model was created and rendered in Blender to visualize the product's form and function.</p>
+                            <ul>
+                                <li>Blender</li>
+                                <li>Product Design</li>
+                                <li>Conceptual Art</li>
+                            </ul>
                         </div>
                         <div class="about-card" data-card="card-3">
-                            <h3>iPhone 17 Max</h3>
-                            <p>A 3d model of the iPhone Pro, made in Blender for a cornerstones project. Rendered with cycles. This was also the first time I used meshmachine in Blender.</p>
+                            <h3>iPhone 17 Concept</h3>
+                            <p>A 3D model of a conceptual iPhone, rendered in Blender. This project served as an exercise in precision modeling and exploring advanced add-ons like MeshMachine to achieve a polished, professional result.</p>
+                            <ul>
+                                <li>Blender</li>
+                                <li>MeshMachine</li>
+                                <li>Cycles Renderer</li>
+                            </ul>
                         </div>
                         <div class="about-card" data-card="card-4">
-                            <h3>Portfolio Website</h3>
-                            <p>Static portfolio website as a STEMinn project. Features some javascript/jquery.</p>
+                            <h3>Personal Portfolio Website</h3>
+                            <p>The very website you are on. A responsive, single-page application built with modern web technologies to showcase my skills and projects. It features a clean design, smooth animations, and interactive elements.</p>
+                            <ul>
+                                <li>HTML5</li>
+                                <li>CSS3 (Flexbox, Grid)</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>jQuery</li>
+                            </ul>
                         </div>
                         <div class="about-card" data-card="card-5">
-                            <h3>Steminn Reverse Engineering Website</h3>
-                            <p>A basic static website made to display the products I reverse engineered for STEMinn. It's not the best, but it works.</p>
+                            <h3>STEMinn Reverse Engineering Site</h3>
+                            <p>A static website developed to document and present the findings of a reverse engineering project for STEMinn. The site was built to be simple, clear, and effective in communicating technical information.</p>
+                            <ul>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>Static Site Generation</li>
+                                <li>Image not found :)</li>
+                            </ul>
                         </div>
                         <div class="about-card" data-card="card-6">
-                            <h3>Data collection form</h3>
-                            <p>Website made to collect data for my Cornerstones PD project. Form is nothing special since it was coded with AI, but I learned a lot about web development and backend development through that project.</p>
+                            <h3>Data Collection & Dashboard UI</h3>
+                            <p>A web application designed to collect user data through a form and visualize it on a dashboard. This project was an exploration of full-stack development, from handling form submissions to presenting data dynamically.</p>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>JavaScript</li>
+                                <li>Backend (node.js)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Call-to-Action Section -->
         <section class="cta-section">
             <p>Like my work? Wanna commission me for a project?</p>
             <a href="contact.html" class="cta-button">Contact me</a>
         </section>
     </main>
+    <!-- Page Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Branding Section -->
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">JULIAN</a>
+                    <a href="index.html" class="footer-logo" aria-label="Home">JULIAN</a>
                     <p>Your friendly neighbourhood developer</p>
                 </div>
+                
+                <!-- Footer Navigation Links -->
                 <div class="footer-links">
+                    <!-- Main Navigation Links -->
                     <div class="footer-links-group">
                         <h4>Navigation</h4>
                         <a href="index.html">Home</a>
@@ -114,17 +177,27 @@
                         <a href="works.html">Work</a>
                         <a href="contact.html">Contact</a>
                     </div>
+                    
+                    <!-- Social/Contact Links -->
                     <div class="footer-links-group">
                         <h4>Connect</h4>
-                        <a href="https://github.com/De1836">GitHub</a>
+                        <a href="https://github.com/De1836" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="mailto:1836.cy@proton.me">Email</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Copyright Notice -->
             <div class="footer-bottom">
-                <p>&copy; 2023 Julian. All rights reserved.</p>
+                <p>&copy; <span id="current-year">2023</span> Julian. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Dynamic Year Update Script -->
+    <script>
+        // Update copyright year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

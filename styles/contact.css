@@ -1,8 +1,16 @@
 .form-group:hover {
+    /* Change the cursor to a pointer on hover to indicate that the form group is clickable. */
     cursor: pointer;
 }
 
-/* Contact Form Section */
+/**
+ * =============================================
+ * CONTACT FORM SECTION
+ * =============================================
+ * Styles for the contact form container and its elements.
+ */
+
+/* Container for the contact form, providing padding and positioning. */
 .contact-form-section {
     padding: var(--space-4) 0;
     margin-top: -40vh;
@@ -10,51 +18,84 @@
     z-index: 2;
 }
 
+/* Main container for the form, centered on the page. */
 .contact-form {
+    /* Set the width to 100% to take up the full width of the parent container. */
     width: 100%;
+    /* Set a maximum width to prevent the form from becoming too wide. */
     max-width: 600px;
+    /* Center the form horizontally using margin. */
     margin: 0 auto;
+    /* Align items vertically using flexbox. */
     align-items: center;
 }
 
+/* Container for each form field (input and label). */
 .form-group {
+    /* Position the form group relative to its parent container. */
     position: relative;
+    /* Add a margin to the bottom of each form group to create space between fields. */
     margin-bottom: 1.5rem;
 }
 
+/* Styling for text inputs and the textarea. */
 .form-input {
+    /* Set the width to 100% to take up the full width of the parent container. */
     width: 100%;
+    /* Add padding to the input to create space between the text and the border. */
     padding: 12px 16px;
+    /* Set the border to a light gray color with a slight opacity. */
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Set the border radius to create a rounded corner effect. */
     border-radius: 12px;
+    /* Set the text color to white. */
     color: #fff;
+    /* Set the font size to 1rem. */
     font-size: 1rem;
+    /* Add a transition effect to the input to smoothly change styles on focus. */
     transition: all 0.3s ease;
 }
 
+/* Focus state for form inputs, providing visual feedback. */
 .form-input:focus {
+    /* Remove the outline to prevent a blue border from appearing on focus. */
     outline: none;
+    /* Change the border color to a brighter blue on focus. */
     border-color: rgba(0, 123, 255, 0.5);
+    /* Add a box shadow to create a subtle glow effect on focus. */
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
+/* Styling for the form label. */
 .form-label {
+    /* Position the label absolute to allow it to overlap the input. */
     position: absolute;
+    /* Set the left position to 16px to create space between the label and the input border. */
     left: 16px;
+    /* Set the top position to 14px to align the label with the input text. */
     top: 14px;
+    /* Set the text color to a light gray. */
     color: #aeb4b9;
+    /* Allow the label to be clicked to focus the input. */
     pointer-events: none;
+    /* Add a transition effect to the label to smoothly change styles on input focus. */
     transition: all 0.3s ease;
+    /* Add padding to the label to create space between the text and the input border. */
     padding: 0 4px;
+    /* Set the transform origin to the top left corner to allow for smooth animation. */
     transform-origin: left top;
 }
 
+/* Animation for the floating label when the input is focused or contains text. */
 .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
+    /* Move the label up and to the left to create a floating effect. */
     transform: translateY(-24px) scale(0.9);
+    /* Change the text color to white to create contrast with the input background. */
     color: #fff;
 }
 
+/* Base styling for buttons in the contact section. */
 .submit-btn, .direct-email {
     color: white;
     border: none;
@@ -78,28 +119,39 @@
     color: #aaa;
 }
 
+/* Hover effect for the direct email button. */
 .direct-email:hover {
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
     border-color: #666;
 }
 
+/* Hover effect for the primary submit button. */
 .submit-btn:hover {
     background: #0056b3;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
+/* Container for the form submission buttons. */
 .send-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/**
+ * =============================================
+ * HERO SECTION
+ * =============================================
+ * Styles for the header content on the contact page.
+ */
+
 .hero-content {
     text-align: center;
 }
 
+/* Styling for the small introductory text (e.g., 'CONTACT'). */
 .contact-intro {
     font-size: var(--font-size-sm);
     text-transform: uppercase;
@@ -108,6 +160,7 @@
     margin-bottom: var(--space-2);
 }
 
+/* Gradient styling for the main hero title. */
 .hero-title .gradient-text {
     background: linear-gradient(to right, var(--primary), var(--accent));
     -webkit-background-clip: text;
@@ -115,6 +168,7 @@
     background-clip: text;
 }
 
+/* Container for contact details like email and social links. */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -123,6 +177,7 @@
     margin: var(--space-3) 0;
 }
 
+/* Styling for the main email link. */
 .email-link {
     display: inline-flex;
     align-items: center;
@@ -131,34 +186,41 @@
     transition: color var(--transition-fast);
 }
 
+/* Hover effect for the email link. */
 .email-link:hover {
     color: var(--primary);
 }
 
+/* Icon styling within the email link. */
 .email-link .icon {
     width: 20px;
     height: 20px;
 }
 
+/* Container for social media icons. */
 .social-links-contact {
     display: flex;
     gap: var(--space-4);
 }
 
+/* Styling for individual social media links. */
 .social-links-contact a {
     color: var(--text-muted);
     transition: color var(--transition-fast);
 }
 
+/* Hover effect for social media links. */
 .social-links-contact a:hover {
     color: var(--primary);
 }
 
+/* Icon styling for social media links. */
 .social-links-contact .icon {
     width: 24px;
     height: 24px;
 }
 
+/* Container for call-to-action buttons in the hero section. */
 .contact-buttons {
     display: flex;
     gap: var(--space-3);
@@ -166,12 +228,14 @@
     margin-top: var(--space-4);
 }
 
+/* Grid layout for form fields to place them side-by-side. */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
 }
 
+/* Character counter for the textarea. */
 .char-counter {
     position: absolute;
     bottom: 10px;
@@ -187,6 +251,7 @@
     gap: var(--space-2);
 }
 
+/* SVG icon styling within the submit button. */
 .submit-btn svg {
     width: 18px;
     height: 18px;

@@ -1,7 +1,38 @@
+/**
+ * ======================================================================================
+ * Navbar Generation and Interaction Script
+ * ======================================================================================
+ * 
+ * This script dynamically generates and manages the navigation bar for the portfolio website.
+ * It runs after the DOM is fully loaded to ensure all necessary elements are available.
+ * 
+ * Key Features:
+ * - Dynamically creates the navigation bar and its links.
+ * - Applies all styling via JavaScript, keeping the HTML clean.
+ * - Highlights the active page link.
+ * - Includes a 'More' dropdown for additional links.
+ * - Displays a time-based greeting on the homepage before showing the nav links.
+ * - Handles all hover effects and animations for a responsive user experience.
+ * 
+ * ======================================================================================
+ */
+
+/**
+ * Event listener for the DOMContentLoaded event.
+ * This function is called when the initial HTML document has been completely loaded and parsed.
+ */
 document.addEventListener('DOMContentLoaded', () => {
+    /**
+     * Get the main navigation element by its ID. If it doesn't exist, exit the script.
+     * @type {HTMLElement}
+     */
     const nav = document.getElementById('navbar');
     if (!nav) return;
 
+    /**
+     * Apply base styles to the main navigation bar container.
+     * This creates the floating, blurred, and rounded appearance.
+     */
     nav.style.cssText = `
         position: fixed;
         top: 16px;
@@ -23,11 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
         padding: 0 20px;
     `;
 
+    /**
+     * Create a container for the navigation links to allow for flexbox alignment.
+     * @type {HTMLElement}
+     */
     const navLinksContainer = document.createElement('div');
     navLinksContainer.className = 'nav-links-container';
     navLinksContainer.style.width = '100%';
     nav.appendChild(navLinksContainer);
 
+    /**
+     * Creates and injects the HTML for the navigation links into the navLinksContainer.
+     * This includes the main links and the structure for the 'More' dropdown.
+     */
     const createNavLinks = () => {
         navLinksContainer.innerHTML = `
         <ul class="nav-links" style="
@@ -61,7 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>`;
     };
 
-    // Style the more container
+    /**
+     * Applies styles and event listeners to the 'More' dropdown menu.
+     * This function handles the appearance, hover effects, and visibility of the dropdown.
+     */
     const styleMoreSpan = () => {
         const moreContainerWrapper = document.querySelector('.more-container-wrapper');
         const moreDiv = document.querySelector('.more-container');
@@ -131,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Show the dropdown on mouse enter.
         moreContainerWrapper.addEventListener('mouseenter', () => {
             navMore.style.color = 'white';
             const arrow = moreDiv.querySelector('.nav-arrow');
@@ -143,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dropdown.style.transform = 'translateY(5px)';
         });
 
+        // Hide the dropdown on mouse leave.
         moreContainerWrapper.addEventListener('mouseleave', () => {
             navMore.style.color = '#aeb4b9';
             const arrow = moreDiv.querySelector('.nav-arrow');
@@ -165,6 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    /**
+     * Applies styles and event listeners to the primary navigation links.
+     * It also identifies the current page and applies an 'active' style to the corresponding link.
+     */
     const styleNavLinks = () => {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
@@ -193,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         
+        // Determine the current page and apply the 'active' style to the corresponding link.
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const activeLink = document.querySelector(`.nav-link[href="${currentPage}"]`);
         if (activeLink) {
@@ -206,7 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Conditional logic for the homepage greeting animation.
+    // If on the homepage, show a greeting first, then fade in the navigation links.
+    // Otherwise, show the navigation links immediately.
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        // Create a time-based greeting (Good Morning, Afternoon, or Evening).
         const greeting = document.createElement('span');
         greeting.className = 'nav-greeting';
         greeting.textContent = `Good ${new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 18 ? 'Afternoon' : 'Evening'}.`;
@@ -234,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             greeting.style.opacity = '0';
+            // After the greeting has faded out, remove it and create the navigation links.
             setTimeout(() => {
                 greeting.remove();
                 nav.style.justifyContent = 'space-between';
@@ -244,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }, 2000);
     } else {
+        // For all other pages, create and display the navigation links immediately.
         nav.style.justifyContent = 'space-between';
         createNavLinks();
         navLinksContainer.style.opacity = '1';

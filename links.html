@@ -1,78 +1,119 @@
 <!DOCTYPE html>
+<!-- 
+    Links Page - Portfolio Website
+    Displays social media and contact links in an organized layout
+-->
 <html lang="en">
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links - My Portfolio</title>
-    <link rel="stylesheet" href="styles/root.css">
-    <link rel="stylesheet" href="styles/links.css">
+    <meta name="description" content="Connect with Julian - Developer and Designer">
+    
+    <!-- Page Title -->
+    <title>Links - Julian's Portfolio</title>
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="styles/root.css">      <!-- Global styles -->
+    <link rel="stylesheet" href="styles/links.css">     <!-- Page-specific styles -->
+    
+    <!-- External Dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="scripts/navbar.js"></script>
-    <script src="scripts/copy.js"></script>
+    
+    <!-- JavaScript Imports -->
+    <script src="scripts/navbar.js" defer></script>     <!-- Navigation bar functionality -->
+    <script src="scripts/copy.js" defer></script>        <!-- Copy-to-clipboard functionality -->
 </head>
 <body>
-    <div id="cursor-glow"></div>
-    <div id="cursor-dot"></div>
+    <!-- Custom Cursor Elements -->
+    <div id="cursor-glow"></div>  <!-- Glow effect that follows cursor -->
+    <div id="cursor-dot"></div>   <!-- Main cursor dot -->
 
+    <!-- Header with Navigation -->
     <header>
+        <!-- Navigation bar is dynamically inserted by navbar.js -->
         <nav id="navbar"></nav>
     </header>
 
+    <!-- Page Header with Gradient Text -->
     <div class="top-header">
         <h1>Connect with <span class="gradient-text">Me</span></h1>
     </div>
 
+    <!-- Main Content Area -->
     <main class="page-container">
+        <!-- Left Sidebar - Profile Section -->
         <div class="profile-column">
             <div class="profile-card">
+                <!-- Profile Picture -->
                 <img src="img/me.png" alt="Profile Picture" class="profile-pic">
+                
+                <!-- Profile Name -->
                 <h1 class="profile-name">Julian</h1>
+                
+                <!-- Profile Tags -->
                 <div class="profile-tags">
                     <span>Developer</span>
                     <span>Designer</span>
+                    <span>Single</span>
                 </div>
+                
+                <!-- Contact Information -->
                 <div class="profile-info">
                     <p><i class="fas fa-map-marker-alt"></i> Hong Kong, China</p>
                     <p><i class="fas fa-envelope"></i> 1836.cy@proton.me</p>
                 </div>
+                
+                <!-- Email Copy Functionality -->
                 <script>
+                    // Initialize copy functionality for email
                     window.onload = function() {
                         initcopy('Email', '.copy-email');
                     }
                 </script>
                 <div class="copy-email" onclick="copy('1836.cy@proton.me', 'Email', '.copy-email')">
-
+                    <!-- This div is a clickable area for copying email -->
                 </div>
             </div>
         </div>
 
+        <!-- Right Column - Social Links -->
         <div class="links-column">
             <div class="links-header">
-                <h2></h2>
+                <h2>My Socials</h2>  <!-- Empty heading for semantic structure -->
             </div>
+            
+            <!-- Grid Layout for Social Links -->
             <div class="links-grid">
-                <a href="https://github.com/De1836" class="link-card" target="_blank">
+                <!-- GitHub Link -->
+                <a href="https://github.com/De1836" class="link-card" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                     <div class="link-text">
                         <h3>GitHub</h3>
                         <p>@De1836</p>
                     </div>
                 </a>
-                <a href="#" class="link-card" target="_blank">
+                
+                <!-- LinkedIn Link (Coming Soon) -->
+                <a href="#" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (Coming Soon)">
                     <i class="fab fa-linkedin"></i>
                     <div class="link-text">
                         <h3>LinkedIn</h3>
                         <p>Coming soon</p>
                     </div>
                 </a>
-                <a href="#" class="link-card" target="_blank">
+                
+                <!-- Twitter/X Link (Coming Soon) -->
+                <a href="#" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="Twitter (Coming Soon)">
                     <i class="fab fa-twitter"></i>
                     <div class="link-text">
                         <h3>Twitter / X</h3>
                         <p>Coming soon</p>
                     </div>
                 </a>
-                <a href="#" class="link-card" target="_blank">
+                
+                <!-- Telegram Link (Coming Soon) -->
+                <a href="#" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="Telegram (Coming Soon)">
                     <i class="fab fa-telegram-plane"></i>
                     <div class="link-text">
                         <h3>Telegram</h3>
@@ -83,14 +124,19 @@
         </div>
     </main>
 
+    <!-- Page Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Branding Section -->
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">JULIAN</a>
+                    <a href="index.html" class="footer-logo" aria-label="Home">JULIAN</a>
                     <p>Your friendly neighbourhood developer</p>
                 </div>
+                
+                <!-- Footer Navigation Links -->
                 <div class="footer-links">
+                    <!-- Main Navigation Links -->
                     <div class="footer-links-group">
                         <h4>Navigation</h4>
                         <a href="index.html">Home</a>
@@ -98,17 +144,27 @@
                         <a href="works.html">Work</a>
                         <a href="contact.html">Contact</a>
                     </div>
+                    
+                    <!-- Social/Contact Links -->
                     <div class="footer-links-group">
                         <h4>Connect</h4>
-                        <a href="https://github.com/De1836">GitHub</a>
+                        <a href="https://github.com/De1836" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="mailto:1836.cy@proton.me">Email</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Copyright Notice -->
             <div class="footer-bottom">
-                <p>&copy; 2023 Julian. All rights reserved.</p>
+                <p>&copy; <span id="current-year">2023</span> Julian. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    
+    <!-- Dynamic Year Update Script -->
+    <script>
+        // Update copyright year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

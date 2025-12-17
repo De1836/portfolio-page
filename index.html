@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Julian's Portfolio - Frontend Developer & Creative Technologist">
     <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/loading.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +16,30 @@
     <script src="scripts/navbar.js"></script>
     <script src="scripts/copy.js"></script>
     <script src="scripts/interactionobserver.js"></script>
+    <script src="scripts/loading.js"></script>
     <script src="scripts/index-works-cards.js"></script>
     <title>Julian - Frontend Developer</title>
+    <style>
+        /* Prevent scrolling while loading */
+        body.loading {
+            overflow: hidden;
+            height: 100vh;
+        }
+    </style>
 </head>
-<body>
+<body class="loading">
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-logo">
+            <div class="loading-logo-inner"></div>
+        </div>
+        <div class="loading-text">Loading...</div>
+        <div class="loading-progress">
+            <div class="loading-progress-bar"></div>
+        </div>
+    </div>
+    
+    <div id="page-content">
     <header id="header">
         <nav id="navbar"></nav>
     </header>
@@ -35,7 +56,7 @@
                     </div>
                 </div>
             </div>
-                </section>
+        </section>
         
         <section class="info-grid-section">
             <div class="container">
@@ -167,41 +188,40 @@
                 <p>Scroll down to tell me how amazing (or absolutely disgusting) my website is. Have a project in mind or want to say hi? Send me an email at <a href="mailto:1836.cy@proton.me">1836.cy@proton.me</a>.</p>
             </div>
         </section>
-    </section>
+    </main>
     <section class="contact">
-            <div class="index-contact-right">
-                <p>You can contact me here. If you don't like email, too bad lol I'm not going to give away more information</p>
+        <div class="index-contact-right">
+            <p>You can contact me here. If you don't like email, too bad lol I'm not going to give away more information</p>
+        </div>
+        <div class="index-contact-left">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
+                <label for="name" class="form-label">Your Name</label>
             </div>
-            <div class="index-contact-left">
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" required class="form-input" placeholder=" ">
-                    <label for="name" class="form-label">Your Name</label>
-                </div>
 
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
-                    <label for="email" class="form-label">Email Address</label>
-                </div>
-                
-                <div class="form-group">
-                    <input type="text" id="subject" name="subject" required class="form-input" placeholder=" ">
-                    <label for="subject" class="form-label">Subject</label>
-                </div>
-                
-                <div class="form-group">
-                    <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
-                    <label for="message" class="form-label">Tell me how great (or not great) I am</label>
-                </div>
-                <div class="send-buttons">
-                    <button type="submit" class="submit-btn">Send Message</button> 
-                </div>
-            </form>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required class="form-input" placeholder=" ">
+                <label for="email" class="form-label">Email Address</label>
             </div>
-        </section>
+            
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" required class="form-input" placeholder=" ">
+                <label for="subject" class="form-label">Subject</label>
+            </div>
+            
+            <div class="form-group">
+                <textarea id="message" name="message" rows="5" required class="form-input" placeholder=" "></textarea>
+                <label for="message" class="form-label">Tell me how great (or not great) I am</label>
+            </div>
+            <div class="send-buttons">
+                <button type="submit" class="submit-btn">Send Message</button> 
+            </div>
+        </form>
+        </div>
     </section>
-</body>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -229,4 +249,5 @@
             </div>
         </div>
     </footer>
+</body>
 </html>

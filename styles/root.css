@@ -1,11 +1,39 @@
-/* ===== VARIABLES ===== */
-/* Use variable to define frequently used values and stuff :) */
+/**
+ * ======================================================================================
+ * ROOT STYLES AND CSS VARIABLES
+ * ======================================================================================
+ * 
+ * This file serves as the foundation of the website's styling. It contains:
+ * 1. CSS Custom Properties (Variables) for the entire design system (colors, spacing, typography).
+ * 2. Base element styles (resets, body, typography, links, buttons).
+ * 3. Global component styles (hero, section headers, footer).
+ * 4. Scroll-triggered animations.
+ * 5. Responsive media queries.
+ * 
+ * NOTE: This file also contains a significant number of duplicated styles at the end.
+ * These should be refactored and removed to keep the codebase clean.
+ * 
+ * ======================================================================================
+ */
+
+/**
+ * =============================================
+ * CSS CUSTOM PROPERTIES (VARIABLES)
+ * =============================================
+ * Defines the global design tokens for the entire site.
+ */
 :root {
     --scroll-distance: calc(var(--scroll-y, 0px) * -1px);
     --switch-interval: 3s; /* time each word is active */
     --items: 6; /* number of scrolling items */
     
-    /* Color System */
+    /**
+     * =============================================
+     * A. Color System
+     * =============================================
+     */
+
+    /* Main brand colors */
     --primary: #3a86ff;
     --primary-hover: #2667cc;
     --secondary: #8338ec;
@@ -14,7 +42,7 @@
     --warning: #ffbe0b;
     --danger: #e63946;
     
-    /* Grayscale */
+    /* Grayscale palette for backgrounds, text, and borders */
     --white: #ffffff;
     --gray-50: #f8f9fa;
     --gray-100: #f1f3f5;
@@ -28,7 +56,7 @@
     --gray-900: #212529;
     --black: #0c0e10;
     
-    /* Theme Colors */
+    /* Semantic theme colors derived from the palette */
     --bg-dark: #0c0e10;
     --bg-darker: #080a0c;
     --bg-light: #1a1d21;
@@ -39,7 +67,13 @@
     --border-radius: 16px;
     --box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     
-    /* Spacing */
+    /**
+     * =============================================
+     * B. Spacing & Sizing
+     * =============================================
+     */
+
+    /* Spacing units for margins, padding, and gaps */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 1rem;
@@ -49,7 +83,13 @@
     --space-7: 4rem;
     --space-8: 6rem;
     
-    /* Typography */
+    /**
+     * =============================================
+     * C. Typography
+     * =============================================
+     */
+
+    /* Font stacks */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     --font-size-xs: 0.75rem;    /* 12px */
@@ -63,23 +103,43 @@
     --font-size-5xl: 3rem;      /* 48px */
     --font-size-6xl: 3.75rem;   /* 60px */
     
-    /* Transitions */
+    /**
+     * =============================================
+     * D. Transitions & Animations
+     * =============================================
+     */
+
+    /* Standard transition timings */
     --transition-fast: 150ms ease;
     --transition-normal: 300ms ease;
     --transition-slow: 500ms ease;
     
-    /* Container */
+    /**
+     * =============================================
+     * E. Layout
+     * =============================================
+     */
+
+    /* Main content container properties */
     --container-width: 1200px;
     --container-padding: 1.5rem;
 }
 
-/* ===== BASE STYLES ===== */
+/**
+ * =============================================
+ * BASE & RESET STYLES
+ * =============================================
+ * Global reset and default styles for basic HTML elements.
+ */
+
+/* Universal box-sizing and reset */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base styles for the root HTML element. */
 html {
     background-color: var(--bg-dark);
     font-family: var(--font-sans);
@@ -90,6 +150,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Base styles for the body element. */
 body {
     margin: 0;
     padding: 0;
@@ -98,7 +159,13 @@ body {
     color: var(--text-primary);
 }
 
-/* Typography */
+/**
+ * =============================================
+ * GLOBAL TYPOGRAPHY
+ * =============================================
+ */
+
+/* Default heading styles */
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 var(--space-3) 0;
     line-height: 1.2;
@@ -136,7 +203,13 @@ img {
     display: block;
 }
 
-/* Layout */
+/**
+ * =============================================
+ * GLOBAL LAYOUT & COMPONENTS
+ * =============================================
+ */
+
+/* Centered container for main content sections. */
 .container {
     width: 100%;
     max-width: var(--container-width);
@@ -149,7 +222,13 @@ section {
     position: relative;
 }
 
-/* Buttons */
+/**
+ * =============================================
+ * BUTTONS
+ * =============================================
+ */
+
+/* Base button style */
 .button {
     display: inline-flex;
     align-items: center;
@@ -166,6 +245,7 @@ section {
     border: 1px solid transparent;
 }
 
+/* Primary button style (solid background). */
 .button-primary {
     background-color: var(--primary);
     color: white;
@@ -180,6 +260,7 @@ section {
     box-shadow: 0 4px 12px rgba(58, 134, 255, 0.2);
 }
 
+/* Secondary button style (outline). */
 .button-secondary {
     background-color: transparent;
     color: var(--primary);
@@ -192,6 +273,7 @@ section {
     transform: translateY(-2px);
 }
 
+/* Text-only button with an arrow. */
 .button-text {
     background: none;
     border: none;
@@ -212,7 +294,12 @@ section {
     transform: translateX(4px);
 }
 
-/* Hero Section */
+/**
+ * =============================================
+ * HERO SECTION
+ * =============================================
+ */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -222,6 +309,7 @@ section {
     overflow: hidden;
 }
 
+/* Animated radial gradient background effect. */
 .hero::before {
     content: '';
     position: absolute;
@@ -234,11 +322,13 @@ section {
     animation: pulse 15s infinite alternate;
 }
 
+/* Keyframes for the hero background pulse animation. */
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.5; }
     100% { transform: scale(1.2); opacity: 1; }
 }
 
+/* Container for hero section text content. */
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
@@ -246,6 +336,7 @@ section {
     padding: var(--space-8) 0;
 }
 
+/* Main heading in the hero section. */
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 800;
@@ -257,6 +348,7 @@ section {
     line-height: 1.1;
 }
 
+/* Subtitle text in the hero section. */
 .hero-subtitle {
     font-size: clamp(1.25rem, 4vw, 1.75rem);
     font-weight: 500;
@@ -264,6 +356,7 @@ section {
     margin-bottom: var(--space-4);
 }
 
+/* Descriptive paragraph in the hero section. */
 .hero-description {
     font-size: var(--font-size-lg);
     max-width: 600px;
@@ -271,6 +364,7 @@ section {
     color: var(--text-secondary);
 }
 
+/* Container for call-to-action buttons in the hero section. */
 .hero-buttons {
     display: flex;
     gap: var(--space-3);
@@ -278,12 +372,18 @@ section {
     flex-wrap: wrap;
 }
 
-/* Section Headers */
+/**
+ * =============================================
+ * SECTION HEADERS
+ * =============================================
+ */
+
 .section-header {
     text-align: center;
     margin-bottom: var(--space-7);
 }
 
+/* Main title for a content section. */
 .section-title {
     font-size: var(--font-size-4xl);
     margin-bottom: var(--space-2);
@@ -291,6 +391,7 @@ section {
     display: inline-block;
 }
 
+/* Decorative underline for the section title. */
 .section-title::after {
     content: '';
     position: absolute;
@@ -303,6 +404,7 @@ section {
     border-radius: 3px;
 }
 
+/* Subtitle or description for a content section. */
 .section-subtitle {
     color: var(--text-muted);
     font-size: var(--font-size-lg);
@@ -310,7 +412,12 @@ section {
     margin: 0 auto;
 }
 
-/* Footer */
+/**
+ * =============================================
+ * FOOTER
+ * =============================================
+ */
+
 .footer {
     background-color: var(--bg-darker);
     color: var(--text-secondary);
@@ -325,10 +432,12 @@ section {
     margin-bottom: var(--space-7);
 }
 
+/* Container for the footer logo and tagline. */
 .footer-brand {
     max-width: 400px;
 }
 
+/* Footer logo text. */
 .footer-logo {
     font-size: var(--font-size-2xl);
     font-weight: 700;
@@ -337,11 +446,13 @@ section {
     display: inline-block;
 }
 
+/* Footer tagline text. */
 .footer-brand p {
     margin-bottom: var(--space-4);
     color: var(--text-muted);
 }
 
+/* Container for social media icons in the footer. */
 .social-links {
     display: flex;
     gap: var(--space-3);
@@ -362,6 +473,7 @@ section {
     gap: var(--space-5);
 }
 
+/* Title for a group of footer links. */
 .footer-links-group h4 {
     font-size: var(--font-size-base);
     color: var(--text-primary);
@@ -370,6 +482,7 @@ section {
     letter-spacing: 1px;
 }
 
+/* Individual link in a footer link group. */
 .footer-links-group a {
     display: block;
     color: var(--text-muted);
@@ -382,6 +495,7 @@ section {
     text-decoration: none;
 }
 
+/* Bottom bar of the footer containing copyright info. */
 .footer-bottom {
     border-top: 1px solid var(--border-color);
     padding: var(--space-5) 0;
@@ -392,6 +506,7 @@ section {
     font-size: var(--font-size-sm);
 }
 
+/* Container for legal links (e.g., Privacy Policy) in the footer bottom. */
 .footer-legal {
     display: flex;
     gap: var(--space-4);
@@ -408,7 +523,15 @@ section {
 }
 
 
-/* Scroll animations */
+/**
+ * =============================================
+ * SCROLL-TRIGGERED ANIMATIONS
+ * =============================================
+ * Defines the initial state for elements that will fade in on scroll.
+ * The 'visible' class is added by 'interactionobserver.js'.
+ */
+
+/* Initial state for elements to be animated. */
 .hero-title,
 .hero-subtitle,
 .hero-description,
@@ -423,6 +546,7 @@ section {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Final state for animated elements after they become visible. */
 .hero-title.visible,
 .hero-subtitle.visible,
 .hero-description.visible,
@@ -436,7 +560,7 @@ section {
     transform: translateY(0);
 }
 
-/* Stagger animation for info cards */
+/* Adds a staggered delay to the animation of info cards for a more dynamic effect. */
 .info-card:nth-child(1) { transition-delay: 0.1s; }
 .info-card:nth-child(2) { transition-delay: 0.2s; }
 .info-card:nth-child(3) { transition-delay: 0.3s; }
@@ -444,7 +568,11 @@ section {
 .info-card:nth-child(5) { transition-delay: 0.5s; }
 .info-card:nth-child(6) { transition-delay: 0.6s; }
 
-/* ===== RESPONSIVE STYLES ===== */
+/**
+ * =============================================
+ * RESPONSIVE STYLES
+ * =============================================
+ */
 @media (max-width: 900px) {
     .profile-row {
         flex-direction: column;
@@ -470,7 +598,21 @@ section {
     }
 }
 
-/* ===== LAYOUT ===== */
+/**
+ * ======================================================================================
+ * DUPLICATED / MISPLACED STYLES
+ * ======================================================================================
+ * 
+ * WARNING: The following styles appear to be duplicated from other CSS files
+ * (e.g., index.css, contact.css, about.css, etc.) and have been pasted here.
+ * 
+ * This creates unnecessary code bloat and makes maintenance difficult. These rules
+ * should be removed from root.css, and the original files should be used instead.
+ * 
+ * ======================================================================================
+ */
+
+/* ===== DUPLICATED LAYOUT ===== */
 .main {
     display: block; 
     justify-content: center;

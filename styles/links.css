@@ -1,82 +1,104 @@
-/* General Page Layout */
+/**
+ * =============================================
+ * MAIN PAGE LAYOUT
+ * =============================================
+ */
+
+/* Container for the entire page content with flex layout */
 .page-container {
-    display: flex;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+    display: flex;                /* Enables flexbox layout */
+    gap: 2rem;                    /* Space between flex items */
+    width: 100%;                  /* Full width of parent */
+    max-width: 1200px;            /* Maximum width of the container */
+    margin: 4rem auto;            /* Vertical margin and horizontal centering */
+    padding: 0 2rem;              /* Horizontal padding */
 }
 
-/* Profile Column (Left) */
+/**
+ * =============================================
+ * PROFILE CARD STYLES
+ * =============================================
+ */
+
+/* Left sidebar containing the profile card */
 .profile-column {
-    flex: 0 0 300px;
+    flex: 0 0 300px;              /* Fixed width of 300px, won't grow or shrink */
 }
 
+/* Styled container for profile information */
 .profile-card {
-    background: #111;
-    border: 1px solid #222;
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
-    position: sticky;
-    top: 100px;
+    background: #111;              /* Dark background color */
+    border: 1px solid #222;        /* Slightly lighter border for contrast */
+    border-radius: 16px;           /* Rounded corners */
+    padding: 2rem;                 /* Inner spacing */
+    text-align: center;            /* Center text alignment */
+    position: sticky;              /* Sticks to the viewport */
+    top: 100px;                    /* Distance from top when sticky */
 }
 
+/* Circular profile picture styling */
 .profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid #333;
+    width: 120px;                  /* Fixed width */
+    height: 120px;                 /* Fixed height to create a square */
+    border-radius: 50%;            /* Makes the image circular */
+    margin: 0 auto 1rem;           /* Centers horizontally and adds bottom margin */
+    border: 3px solid #333;        /* Border around the image */
+    display: block;                /* Required for margin: 0 auto to work */
 }
 
+/* Styling for the profile name */
 .profile-name {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;             /* Larger text size for name */
+    margin-bottom: 0.5rem;         /* Space below the name */
 }
 
+/* Container for tag elements below the profile */
 .profile-tags {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    display: flex;                 /* Enables flexbox for tags */
+    justify-content: center;       /* Centers tags horizontally */
+    gap: 0.5rem;                   /* Space between individual tags */
+    margin-bottom: 1.5rem;         /* Space below the tags section */
 }
 
+/* Individual tag styling */
 .profile-tags span {
-    background: #222;
-    color: #aaa;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    background: #222;              /* Dark background for tags */
+    color: #aaa;                   /* Light gray text color */
+    font-size: 0.75rem;            /* Smaller text size for tags */
+    padding: 0.25rem 0.75rem;      /* Internal spacing for tags */
+    border-radius: 20px;           /* Rounded corners for pill shape */
 }
 
+/* Container for additional profile information */
 .profile-info {
-    text-align: left;
-    margin-bottom: 1.5rem;
-    color: #aaa;
+    text-align: left;              /* Left-align text for better readability */
+    margin-bottom: 1.5rem;         /* Space below the info section */
+    color: #aaa;                   /* Light gray text color */
 }
 
+/* Paragraphs within profile info */
 .profile-info p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;         /* Consistent spacing between paragraphs */
 }
 
+/* Icons within profile info */
 .profile-info i {
-    margin-right: 0.75rem;
-    width: 16px;
-    text-align: center;
+    margin-right: 0.75rem;         /* Space between icon and text */
+    width: 16px;                   /* Fixed width for consistent alignment */
+    text-align: center;            /* Center icons in their container */
 }
 
+/* Call-to-action button styling */
 .cta-button {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-    background: #fff;
-    color: #111;
-    text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
+    display: block;                /* Full width button */
+    width: 100%;                   /* Full width of parent */
+    padding: 0.75rem;              /* Comfortable clickable area */
+    background: #fff;              /* White background */
+    color: #111;                   /* Dark text for contrast */
+    text-align: center;            /* Center button text */
+    border-radius: 8px;            /* Slightly rounded corners */
+    text-decoration: none;         /* Remove underline from links */
+    font-weight: 500;              /* Medium font weight for better readability */
     transition: background-color 0.3s;
 }
 

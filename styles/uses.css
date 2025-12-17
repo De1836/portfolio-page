@@ -1,9 +1,23 @@
-/* Header Section */
+/**
+ * =============================================
+ * USES PAGE STYLES
+ * =============================================
+ * This file contains styles specific to the 'What I Use' page.
+ */
+
+/**
+ * =============================================
+ * A. HEADER SECTION
+ * =============================================
+ */
+
+/* Centered header for the page title. */
 .uses-header {
     text-align: center;
     padding: 4rem 2rem;
 }
 
+/* Small subtitle text above the main heading. */
 .uses-header .subtitle {
     font-size: 0.875rem;
     color: #aaa;
@@ -18,7 +32,13 @@
     font-weight: 400;
 }
 
-/* Main Layout */
+/**
+ * =============================================
+ * B. MAIN LAYOUT
+ * =============================================
+ */
+
+/* Flex container for the two-column layout (nav and content). */
 .uses-container {
     display: flex;
     gap: 3rem;
@@ -27,7 +47,13 @@
     padding: 0 2rem 4rem;
 }
 
-/* Aside Navigation (Left Column) */
+/**
+ * =============================================
+ * C. ASIDE NAVIGATION (LEFT COLUMN)
+ * =============================================
+ */
+
+/* Fixed-width container for the side navigation. */
 .uses-nav {
     flex: 0 0 200px;
 }
@@ -52,15 +78,23 @@
     border-left: 2px solid #fff;
 }
 
-/* Content (Right Column) */
+/**
+ * =============================================
+ * D. CONTENT (RIGHT COLUMN)
+ * =============================================
+ */
+
+/* Flexible container for the main content. */
 .uses-content {
     flex: 1;
 }
 
+/* Spacing for each content section (e.g., Workstation, Dev Tools). */
 .uses-content section {
     margin-bottom: 4rem;
 }
 
+/* Section headings within the content area. */
 .uses-content h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -79,22 +113,31 @@
     margin-bottom: 1rem;
 }
 
+/* Image styling within an item card. */
 .item-card img {
     width: 80px;
     height: 80px;
     object-fit: contain;
 }
 
+/* Item name/title within a card. */
 .item-info h3 {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
 }
 
+/* Item description text. */
 .item-info p {
     color: #aaa;
 }
 
-/* Responsive Design */
+/**
+ * =============================================
+ * E. RESPONSIVE DESIGN
+ * =============================================
+ */
+
+/* For tablets and smaller screens, stack the layout vertically. */
 @media (max-width: 900px) {
     .uses-container {
         flex-direction: column;
@@ -126,6 +169,7 @@
     }
 }
 
+/* For mobile screens, adjust typography and card layout. */
 @media (max-width: 600px) {
     .uses-header h1 {
         font-size: 3rem;
