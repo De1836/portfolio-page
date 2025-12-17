@@ -12,4 +12,4 @@ Note - Contact form has api key removed, need to add back when pasting to codehs
 - Complete about
 - Remove FAQ, replace with seperate pages
 
-[View the project on codeHS >:(](https://codehs.com/)
+[View the project on codeHS >:(](https://portfolio-17306857.codehs.me/index.html)
