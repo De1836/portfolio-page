@@ -13,3 +13,6 @@ Note - Contact form has api key removed, need to add back when pasting to codehs
 - Remove FAQ, replace with seperate pages
 
 [View the project on codeHS >:(](https://portfolio-17306857.codehs.me/index.html)
+
+# please direct your attention to the message below
+This repository will stay open for around 1 or 2 months. Afterwards, this will be privated for privacy reasons. You can still check the depolyment/link (if you can find it) on codehs.
